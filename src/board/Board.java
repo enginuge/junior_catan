@@ -2,18 +2,30 @@ package board;
 
 public class Board
 {
-	private static uniqueInstance = null;
+	private static Board uniqueInstance = null;
+
+	private int player_count = 0;
 	
 	public static Board getInstance()
 	{
-		if(uniqueInstance = null)
-			uniqueInstance = new  Board(4);
+		if(uniqueInstance == null)
+			uniqueInstance = new Board();
 		
 		return uniqueInstance;
 	}
 	
-	private Board(int player_count)
+	private Board()
 	{
-		private int player_count = player_count;
+		System.out.println("Beginning Game...\n");
+	}
+	
+	public void set_player_count(int count)
+	{
+		this.player_count = count;
+	}
+	
+	public int get_player_count()
+	{
+		return this.player_count;
 	}
 }
