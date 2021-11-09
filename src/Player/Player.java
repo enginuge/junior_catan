@@ -6,11 +6,13 @@ public class Player
 {
 	protected String name;
 	
-	private Hand hand = new Hand(); // hand with both decks.
+	private Hand hand; // hand with both decks.
 	
 	public Player(String name)
 	{
 		this.name = name;
+		
+		this.hand = new Hand();
 	}
 	
 	public String toString()

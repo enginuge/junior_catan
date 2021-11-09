@@ -55,5 +55,10 @@ public class Coco_Deck implements Deck
 	{
 		// The stack cannot be sorted easily...
 	}
+	
+	public int size()
+	{
+		return coco_tiles.size();
+	}
 
 }

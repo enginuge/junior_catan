@@ -11,6 +11,11 @@ public class Begin_Demo {
 		String string = String.format("Player Count: %d", board.get_player_count());
 		
 		System.out.println(string);
+		
+		string = String.format("Coco Deck size: %d", board.coco_deck.size());
+		
+		System.out.println(string);
+		
 	}
 
 }

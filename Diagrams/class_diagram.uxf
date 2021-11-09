@@ -31,8 +31,12 @@ Trade(need: Resource, give: Resource, amounts: int)</panel_attributes>
     <panel_attributes>Tile
 --
 resource: ResouceClass
+value: int
+nodes: arraylist Points
+links
 --
 produce(): this.resource
+set_player()
 </panel_attributes>
     <additional_attributes/>
   </element>
@@ -275,6 +279,20 @@ Operation2</panel_attributes>
 
 -
 action()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>245</x>
+      <y>370</y>
+      <w>155</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>Each tile should have a list of observing 
+players for each lair of player put on
+the node of the tile.
+bg=yellow</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>
