@@ -1,12 +1,11 @@
-package resources;
+package cards;
 
-public class Goat extends Resource
+public class Molasses extends Resource
 {
-	public Goat()
-	{
-		this.type = "Goat";
+
+	public Molasses() {
+		this.type = "Molasses";
 	}
-	
 	@Override
 	public Resource give() {
 		// TODO Auto-generated method stub
@@ -31,8 +30,10 @@ public class Goat extends Resource
 	}
 
 	@Override
-	public String toString() {
+	public String toString() 
+	{
 		return this.type;
 	}
+
 
 }

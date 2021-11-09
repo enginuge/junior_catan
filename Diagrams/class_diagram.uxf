@@ -262,4 +262,19 @@ Operation1
 Operation2</panel_attributes>
     <additional_attributes/>
   </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>460</x>
+      <y>325</y>
+      <w>75</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>/CocoTile/
+-
+
+-
+action()</panel_attributes>
+    <additional_attributes/>
+  </element>
 </diagram>

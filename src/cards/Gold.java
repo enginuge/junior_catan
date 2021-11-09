@@ -1,10 +1,10 @@
-package resources;
+package cards;
 
-public class Cutlass extends Resource
+public class Gold extends Resource
 {
-	public Cutlass()
+	public Gold()
 	{
-		this.type = "Cutlass";
+		this.type = "Gold";
 	}
 	
 	@Override
@@ -26,12 +26,13 @@ public class Cutlass extends Resource
 	}
 
 	@Override
-	public String return_type() {
+	public String return_type() 
+	{
 		return this.type;
 	}
 
 	@Override
-	public String toString()
+	public String toString() 
 	{
 		return this.type;
 	}

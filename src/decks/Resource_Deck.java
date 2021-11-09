@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import resources.Cutlass;
-import resources.Goat;
-import resources.Gold;
-import resources.Molasses;
-import resources.Resource;
+import cards.Cutlass;
+import cards.Goat;
+import cards.Gold;
+import cards.Molasses;
+import cards.Resource;
 
 public class Resource_Deck implements Deck
 {

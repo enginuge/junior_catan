@@ -1,6 +1,6 @@
-package resources;
+package cards;
 
-/* Abstract class to help describe the types of resources and the methods they should all have in
+/* Abstract class to help describe the types of cards and the methods they should all have in
  * common.
  * Some of these methods may be suitable to complete here.
  */

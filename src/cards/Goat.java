@@ -1,10 +1,10 @@
-package resources;
+package cards;
 
-public class Wood extends Resource
+public class Goat extends Resource
 {
-	public Wood()
+	public Goat()
 	{
-		this.type = "Wood";
+		this.type = "Goat";
 	}
 	
 	@Override
