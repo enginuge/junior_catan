@@ -4,8 +4,8 @@
   <element>
     <id>UMLActor</id>
     <coordinates>
-      <x>110</x>
-      <y>250</y>
+      <x>90</x>
+      <y>170</y>
       <w>60</w>
       <h>110</h>
     </coordinates>
@@ -15,8 +15,8 @@
   <element>
     <id>UMLActor</id>
     <coordinates>
-      <x>800</x>
-      <y>250</y>
+      <x>780</x>
+      <y>170</y>
       <w>60</w>
       <h>110</h>
     </coordinates>
@@ -26,8 +26,8 @@
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>210</x>
-      <y>250</y>
+      <x>190</x>
+      <y>170</y>
       <w>120</w>
       <h>40</h>
     </coordinates>
@@ -37,8 +37,8 @@
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>350</x>
-      <y>250</y>
+      <x>330</x>
+      <y>170</y>
       <w>120</w>
       <h>40</h>
     </coordinates>
@@ -48,8 +48,8 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>160</x>
-      <y>250</y>
+      <x>140</x>
+      <y>170</y>
       <w>70</w>
       <h>40</h>
     </coordinates>
@@ -59,8 +59,8 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>320</x>
-      <y>250</y>
+      <x>300</x>
+      <y>170</y>
       <w>50</w>
       <h>40</h>
     </coordinates>
@@ -70,8 +70,8 @@
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>630</x>
-      <y>250</y>
+      <x>610</x>
+      <y>170</y>
       <w>120</w>
       <h>40</h>
     </coordinates>
@@ -81,8 +81,8 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>740</x>
-      <y>250</y>
+      <x>720</x>
+      <y>170</y>
       <w>80</w>
       <h>40</h>
     </coordinates>
@@ -92,8 +92,8 @@
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>770</x>
-      <y>120</y>
+      <x>750</x>
+      <y>40</y>
       <w>120</w>
       <h>40</h>
     </coordinates>
@@ -103,8 +103,8 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>820</x>
-      <y>150</y>
+      <x>800</x>
+      <y>70</y>
       <w>30</w>
       <h>120</h>
     </coordinates>
@@ -114,8 +114,8 @@
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>630</x>
-      <y>120</y>
+      <x>610</x>
+      <y>40</y>
       <w>120</w>
       <h>40</h>
     </coordinates>
@@ -126,8 +126,8 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>740</x>
-      <y>130</y>
+      <x>720</x>
+      <y>50</y>
       <w>50</w>
       <h>30</h>
     </coordinates>
@@ -137,8 +137,8 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>680</x>
-      <y>150</y>
+      <x>660</x>
+      <y>70</y>
       <w>30</w>
       <h>120</h>
     </coordinates>
@@ -148,8 +148,8 @@
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>80</x>
-      <y>460</y>
+      <x>60</x>
+      <y>380</y>
       <w>120</w>
       <h>40</h>
     </coordinates>
@@ -159,8 +159,8 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>130</x>
-      <y>350</y>
+      <x>110</x>
+      <y>270</y>
       <w>30</w>
       <h>130</h>
     </coordinates>
@@ -170,8 +170,8 @@
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>450</x>
-      <y>450</y>
+      <x>430</x>
+      <y>370</y>
       <w>120</w>
       <h>40</h>
     </coordinates>
@@ -182,8 +182,8 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>560</x>
-      <y>280</y>
+      <x>540</x>
+      <y>200</y>
       <w>160</w>
       <h>210</h>
     </coordinates>
@@ -194,8 +194,8 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>190</x>
-      <y>450</y>
+      <x>170</x>
+      <y>370</y>
       <w>280</w>
       <h>50</h>
     </coordinates>
@@ -206,8 +206,8 @@
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>270</x>
-      <y>360</y>
+      <x>250</x>
+      <y>280</y>
       <w>120</w>
       <h>40</h>
     </coordinates>
@@ -217,8 +217,8 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>190</x>
-      <y>370</y>
+      <x>170</x>
+      <y>290</y>
       <w>130</w>
       <h>130</h>
     </coordinates>
@@ -229,8 +229,8 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>380</x>
-      <y>280</y>
+      <x>360</x>
+      <y>200</y>
       <w>110</w>
       <h>120</h>
     </coordinates>
