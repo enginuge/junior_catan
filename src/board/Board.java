@@ -1,5 +1,7 @@
 package board;
 
+import java.util.ArrayList;
+
 import cards.Coco_Tile;
 import cards.Coco_Tile_Free_Cutlass_Goat;
 import cards.Coco_Tile_Free_Structure;
@@ -15,6 +17,8 @@ public class Board
 	
 	public Coco_Deck coco_deck; // Deck to hold the coco_tiles.
 	
+	public ArrayList<Island> islands = new ArrayList<Island>(); 
+	
 	public static Board getInstance()
 	{
 		if(uniqueInstance == null)
@@ -28,6 +32,8 @@ public class Board
 		System.out.println("Beginning Game...\n");
 		
 		coco_deck = this.setup_coco_tiles();
+		
+		this.islands = this.setup_islands();
 	}
 	
 	public void set_player_count(int count)
@@ -82,4 +88,16 @@ public class Board
 		
 		return deck;
 	}
+	
+	private ArrayList<Island> setup_islands()
+	{
+		ArrayList<Island> new_islands = new ArrayList<Island>();
+		
+		Island A = new Island("A", 3);
+		
+		new_islands.add(A);
+		
+		return new_islands;
+	}
+	
 }

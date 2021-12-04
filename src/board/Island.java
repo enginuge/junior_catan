@@ -5,8 +5,15 @@ import java.util.ArrayList;
 /*
  * Class to describe an Island, abstract as there will be many Islands defined.
  */
-public abstract class Island 
+public class Island 
 {
+	public Island(String name, int number)
+	{
+		this.name = name;
+		
+		this.number = number;
+	}
+	
 	// Island name/letter.
 	public String name;
 	
@@ -14,8 +21,6 @@ public abstract class Island
 	// Perhaps import the dice package and its enumerations.
 	// rather than the integer.
 	public int number;
-	
-	
 	
 	// Have the node lairs listed in each island list.
 	public ArrayList<Lair> lairs = new ArrayList<Lair>();
