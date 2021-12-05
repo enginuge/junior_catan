@@ -1,5 +1,7 @@
 package decks;
 
+import cards.Resource;
+
 /* Each Player has one hand,
  * With a resource deck and coco tile deck. */
 public class Hand
@@ -13,5 +15,10 @@ public class Hand
 		this.resource_deck = new Resource_Deck();
 		
 		this.coco_deck = new Coco_Deck();
+	}
+
+	public void add_resource(Object o)
+	{
+		this.resource_deck.add(o);
 	}
 }

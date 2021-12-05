@@ -7,6 +7,8 @@ import cards.Coco_Tile_Free_Cutlass_Goat;
 import cards.Coco_Tile_Free_Structure;
 import cards.Coco_Tile_Free_Wood_Molasses;
 import cards.Coco_Tile_Ghost_Pirate;
+import cards.Resource;
+import cards.Wood;
 import decks.Coco_Deck;
 
 public class Board
@@ -91,11 +93,27 @@ public class Board
 	
 	private ArrayList<Island> setup_islands()
 	{
+		Resource wood = new Wood();
+		
 		ArrayList<Island> new_islands = new ArrayList<Island>();
 		
-		Island A = new Island("A", 3);
+		Island A = new Island("A", 3, wood);
 		
 		new_islands.add(A);
+		
+		Lair l1 = new Lair(1);
+		Lair l2 = new Lair(2);
+		Lair l3 = new Lair(3);
+		Lair l4 = new Lair(4);
+		Lair l5 = new Lair(5);
+		Lair l6 = new Lair(6);
+		
+		A.attach(l1);
+		A.attach(l2);
+		A.attach(l3);
+		A.attach(l4);
+		A.attach(l5);
+		A.attach(l6);
 		
 		return new_islands;
 	}
