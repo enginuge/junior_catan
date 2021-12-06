@@ -1,4 +1,5 @@
 package demos;
+import Viewer.Draw_Board;
 import board.Board;
 
 public class Begin_Demo {
@@ -15,6 +16,10 @@ public class Begin_Demo {
 		string = String.format("Coco Deck size: %d", board.coco_deck.size());
 		
 		System.out.println(string);
+		
+		Draw_Board view = new Draw_Board();
+		
+		view.draw_board();
 		
 	}
 
