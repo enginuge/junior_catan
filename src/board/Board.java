@@ -17,8 +17,7 @@ public class Board
 	private static Board uniqueInstance = null;
 
 	private int player_count = 0;
-		
-	
+			
 	public Coco_Deck coco_deck; // Deck to hold the coco_tiles.
 	
 	public ArrayList<Island> islands = new ArrayList<Island>(); 
@@ -35,12 +34,15 @@ public class Board
 	{
 		System.out.println("Beginning Game...\n");
 
-//		this.create_players();
-		
-		coco_deck = this.setup_coco_tiles();
+//		coco_deck = this.setup_coco_tiles();
 
-		this.islands = this.setup_islands();
+//		this.islands = this.setup_islands();
 		
+	}
+	
+	public void setup_board(int player_count)
+	{
+		this.set_player_count(player_count);
 	}
 	
 	public void set_player_count(int count)
