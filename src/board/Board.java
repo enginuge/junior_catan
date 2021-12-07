@@ -33,7 +33,7 @@ public class Board
 	
 	private Board()
 	{
-		System.out.println("Beginning Game...\n");
+		System.out.println("Creating Board...\n");
 
 		coco_deck = this.setup_coco_tiles();
 
@@ -86,6 +86,8 @@ public class Board
 	
 	private Coco_Deck setup_coco_tiles()
 	{
+		System.out.println("Setting up Coco Tiles...");
+		
 		int i = 0;
 		
 		Coco_Deck deck = new Coco_Deck();
@@ -129,6 +131,7 @@ public class Board
 	
 	private ArrayList<Island> setup_islands()
 	{
+		System.out.println("Setting up Islands...");
 		Resource wood = new Wood();
 		
 		ArrayList<Island> new_islands = new ArrayList<Island>();
@@ -141,7 +144,7 @@ public class Board
 		Lair l2 = new Lair(2);
 		Lair l3 = new Lair(3);
 		
-		l3.set_owner(Table.getInstance().players.get(0)); // Set the white player to owner of lair 3.
+//		l3.set_owner(Table.getInstance().players.get(0)); // Set the white player to owner of lair 3.
 		
 		Lair l4 = new Lair(4);
 		Lair l5 = new Lair(5);

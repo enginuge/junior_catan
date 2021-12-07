@@ -14,6 +14,8 @@ import board.Board;
 public class Table 
 {	
 	public ArrayList<Player> players = new ArrayList<Player>();
+	
+	public Board board;
 
 	private static Table uniqueInstance = null;
 
@@ -30,10 +32,13 @@ public class Table
 		System.out.printf("Creating Table...\n");
 		
 		players = this.create_players();
+		
+		board = Board.getInstance(); // Only get the board after the players are made.
 	}
 	
 	public ArrayList<Player> create_players()
 	{
+		System.out.println("Creating Players...");
 		// ask for number of players
 		// ask each player what colour they want. cant be same colour.
 		// begin the game.

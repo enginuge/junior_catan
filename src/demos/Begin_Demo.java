@@ -10,7 +10,7 @@ public class Begin_Demo {
 		
 		table.show_players();
 		
-		Board board = Board.getInstance();
+//		Board board = Board.getInstance();
 		
 //		board.set_player_count(4);
 		
@@ -20,7 +20,7 @@ public class Begin_Demo {
 		
 //		System.out.println(string);
 		
-		string = String.format("Coco Deck size: %d", board.coco_deck.size());
+		string = String.format("Coco Deck size: %d", table.board.coco_deck.size());
 		
 		System.out.println(string);
 		
@@ -28,7 +28,7 @@ public class Begin_Demo {
 		
 		view.draw_board();
 		
-		board.islands.get(0).lairs.get(5).set_owner(table.players.get(2));
+		table.board.islands.get(0).lairs.get(5).set_owner(table.players.get(2));
 		
 		view.draw_board();
 		
