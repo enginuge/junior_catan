@@ -11,6 +11,7 @@ import cards.Coco_Tile_Ghost_Pirate;
 import cards.Resource;
 import cards.Wood;
 import decks.Coco_Deck;
+import game.Table;
 
 public class Board
 {
@@ -34,28 +35,26 @@ public class Board
 	{
 		System.out.println("Beginning Game...\n");
 
-//		coco_deck = this.setup_coco_tiles();
+		coco_deck = this.setup_coco_tiles();
 
-//		this.islands = this.setup_islands();
+		this.islands = this.setup_islands();
 		
 	}
 	
-	public void setup_board(int player_count)
-	{
-		this.set_player_count(player_count);
-	}
+//	public void setup_board(int player_count)
+//	{
+//		this.set_player_count(player_count);
+//	}
 	
-	public void set_player_count(int count)
-	{
-		this.player_count = count;
-		
-		
-	}
-	
-	public int get_player_count()
-	{
-		return this.player_count;
-	}
+//	public void set_player_count(int count)
+//	{
+//		this.player_count = count;
+//	}
+//	
+//	public int get_player_count()
+//	{
+//		return this.player_count;
+//	}
 	
 //	public void create_players() 
 //	{
@@ -142,7 +141,7 @@ public class Board
 		Lair l2 = new Lair(2);
 		Lair l3 = new Lair(3);
 		
-//		l3.set_owner(this.players.get(0)); // Set the white player to owner of lair 3.
+		l3.set_owner(Table.getInstance().players.get(0)); // Set the white player to owner of lair 3.
 		
 		Lair l4 = new Lair(4);
 		Lair l5 = new Lair(5);
@@ -156,6 +155,13 @@ public class Board
 		A.attach(l4);
 		A.attach(l5);
 		A.attach(l6);
+		
+		A.lairs.add(l1);
+		A.lairs.add(l2);
+		A.lairs.add(l3);
+		A.lairs.add(l4);
+		A.lairs.add(l5);
+		A.lairs.add(l6);
 		
 		return new_islands;
 	}
