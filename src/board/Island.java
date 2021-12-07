@@ -49,6 +49,15 @@ public class Island extends Subject implements Observer
 		// TODO Auto-generated method stub
 		
 	}
+	
+//	@Override
+//	String toString()
+//	{
+//		String output;
+//		
+//		output = String.format(output, null)format
+//		return 
+//	}
 
 //	Moved to Subject Class.
 //	@Override

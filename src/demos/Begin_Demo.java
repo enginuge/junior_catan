@@ -1,20 +1,36 @@
 package demos;
+import Viewer.Draw_Board;
 import board.Board;
+import game.Table;
 
 public class Begin_Demo {
 
 	public static void main(String[] args) {
-		Board board = Board.getInstance();
+		Table table = Table.getInstance();
 		
-		board.set_player_count(4);
+		table.show_players();
 		
-		String string = String.format("Player Count: %d", board.get_player_count());
+//		Board board = Board.getInstance();
+		
+//		board.set_player_count(4);
+		
+		String string;
+		
+//		String string = String.format("Player Count: %d", board.get_player_count());
+		
+//		System.out.println(string);
+		
+		string = String.format("Coco Deck size: %d", table.board.coco_deck.size());
 		
 		System.out.println(string);
 		
-		string = String.format("Coco Deck size: %d", board.coco_deck.size());
+		Draw_Board view = new Draw_Board();
 		
-		System.out.println(string);
+		view.draw_board();
+		
+		table.board.islands.get(0).lairs.get(5).set_owner(table.players.get(2));
+		
+		view.draw_board();
 		
 	}
 
