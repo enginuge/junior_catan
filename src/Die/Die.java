@@ -2,6 +2,7 @@ package Die;
 
 import java.util.Random;
 
+import board.Board;
 import observable.Subject;
 
 public class Die extends Subject 
@@ -9,9 +10,21 @@ public class Die extends Subject
 	Random random = new Random();
 	
 	int result; 
+
+	private static Die uniqueInstance = null;
+
+	public static Die getInstance()
+	{
+		if(uniqueInstance == null)
+			uniqueInstance = new Die();
+		
+		return uniqueInstance;
+	}
 	
 	public Die()
 	{
+		System.out.printf("Creating Die...\n");
+		
 		this.result = 0;
 	}
 	
@@ -32,7 +45,7 @@ public class Die extends Subject
 	
 	public static void main(String args[])
 	{
-		Die die = new Die();
+		Die die = Die.getInstance();
 		
 		int[] results = new int[6];
 		

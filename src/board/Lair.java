@@ -53,7 +53,8 @@ public class Lair implements Observer
 //	@Override // Not an Override as it has an input, which makes it a different fnuction.
 	public void update(Object o)
 	{
-		this.owner.collect_resource((Resource)o);
+		if(this.occupied)
+			this.owner.collect_resource(o);
 	}
 
 	@Override

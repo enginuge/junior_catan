@@ -9,16 +9,8 @@ public class Begin_Demo {
 		Table table = Table.getInstance();
 		
 		table.show_players();
-		
-//		Board board = Board.getInstance();
-		
-//		board.set_player_count(4);
-		
+
 		String string;
-		
-//		String string = String.format("Player Count: %d", board.get_player_count());
-		
-//		System.out.println(string);
 		
 		string = String.format("Coco Deck size: %d", table.board.coco_deck.size());
 		
@@ -31,6 +23,13 @@ public class Begin_Demo {
 		table.board.islands.get(0).lairs.get(5).set_owner(table.players.get(2));
 		
 		view.draw_board();
+		
+		for(int i = 0; i < 10; i++)
+		{
+			table.die.roll();
+			
+			System.out.printf("Rolled a %d\n", table.die.one2six());
+		}
 		
 	}
 

@@ -3,6 +3,7 @@ package game;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import Die.Die;
 import Player.Player;
 import board.Board;
 
@@ -16,6 +17,8 @@ public class Table
 	public ArrayList<Player> players = new ArrayList<Player>();
 	
 	public Board board;
+	
+	public Die die;
 
 	private static Table uniqueInstance = null;
 
@@ -34,14 +37,21 @@ public class Table
 		players = this.create_players();
 		
 		board = Board.getInstance(); // Only get the board after the players are made.
+		
+		die = Die.getInstance();
+		
+		board.attach_islands();
 	}
 	
+	/*
+	 * Method to Scan the amount of players.
+	 * And ask each player which color they want.
+	 * Colors are case sensitive and disapear once selected.
+	 */
 	public ArrayList<Player> create_players()
 	{
 		System.out.println("Creating Players...");
-		// ask for number of players
-		// ask each player what colour they want. cant be same colour.
-		// begin the game.
+
 		Scanner sc= new Scanner(System.in);    //System.in is a standard input stream  
 		
 		System.out.print("How many Players: ");  
@@ -52,6 +62,7 @@ public class Table
 		System.out.println("Player Count= " + player_count); 
 		
 		ArrayList<String> colors = new ArrayList<String>();
+		
 		ArrayList<Player> players = new ArrayList<Player>();
 
 		colors.add("White");
@@ -86,7 +97,8 @@ public class Table
 			}
 			
 		} // end player color selection loop.
-		sc.close();
+		
+		sc.close(); // Close the scanner.
 		
 		return players;
 	} 
