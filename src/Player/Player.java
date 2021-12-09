@@ -17,6 +17,8 @@ public class Player
 	
 	public void collect_resource(Object o)
 	{
+		System.out.printf("%s has collected %s.\n", this.name, o);
+		
 		this.hand.add_resource(o);
 	}
 	

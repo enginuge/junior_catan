@@ -2,7 +2,7 @@ package board;
 
 import java.util.ArrayList;
 
-import Player.Player;
+import Die.Die;
 import cards.Coco_Tile;
 import cards.Coco_Tile_Free_Cutlass_Goat;
 import cards.Coco_Tile_Free_Structure;
@@ -11,18 +11,18 @@ import cards.Coco_Tile_Ghost_Pirate;
 import cards.Resource;
 import cards.Wood;
 import decks.Coco_Deck;
-import game.Table;
 
 public class Board
 {
-	private static Board uniqueInstance = null;
 
 	private int player_count = 0;
 			
 	public Coco_Deck coco_deck; // Deck to hold the coco_tiles.
 	
 	public ArrayList<Island> islands = new ArrayList<Island>(); 
-	
+
+	private static Board uniqueInstance = null;
+
 	public static Board getInstance()
 	{
 		if(uniqueInstance == null)
@@ -167,6 +167,16 @@ public class Board
 		A.lairs.add(l6);
 		
 		return new_islands;
+	}
+	
+	public void attach_islands()
+	{
+		for(Island i: this.islands)
+		{
+			Die.getInstance().attach(i);			
+
+			i.attach_lairs();
+		}
 	}
 	
 	public String toString()

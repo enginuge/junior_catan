@@ -2,6 +2,7 @@ package board;
 
 import java.util.ArrayList;
 
+import Die.Die;
 import cards.Resource;
 import observable.Observer;
 import observable.Subject;
@@ -41,13 +42,20 @@ public class Island extends Subject implements Observer
 	@Override
 	public void update()
 	{
-		this.notify_observers(this.resource);
+		if(this.number == Die.getInstance().one2six())
+			this.notify_observers(this.resource);
 	}
 
 	@Override
 	public void update(Object object) {
 		// TODO Auto-generated method stub
 		
+	}
+	
+	public void attach_lairs()
+	{
+		for(Lair lair: lairs)
+			this.attach(lair);
 	}
 	
 //	@Override
