@@ -1,4 +1,4 @@
-package Viewer;
+package viewer;
 
 import board.Board;
 import board.Island;
@@ -19,6 +19,8 @@ public class Draw_Board
 	
 	public void draw_island(Island island)
 	{
+		System.out.println(island);
+
 		for(Lair lair : island.lairs)
 		{
 			draw_lair(lair);
@@ -27,11 +29,11 @@ public class Draw_Board
 	
 	public void draw_lair(Lair lair)
 	{
-		String output;
+//		String output;
+//		
+//		output = String.format("%s", lair);
 		
-		output = String.format("%s", lair.owner);
-		
-		System.out.println(output);
+		System.out.println(lair);
 	}
 	
 //	public	static void main(String args[])

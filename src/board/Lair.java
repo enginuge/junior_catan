@@ -62,4 +62,9 @@ public class Lair implements Observer
 		// TODO Auto-generated method stub
 		
 	}
+	
+	public String toString()
+	{
+		return String.format("Lair %02d:\tOwner:\t%s", this.identity, this.owner);
+	}
 }

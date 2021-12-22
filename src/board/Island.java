@@ -58,14 +58,11 @@ public class Island extends Subject implements Observer
 			this.attach(lair);
 	}
 	
-//	@Override
-//	String toString()
-//	{
-//		String output;
-//		
-//		output = String.format(output, null)format
-//		return 
-//	}
+	@Override
+	public String toString()
+	{
+		return String.format("Island %s:\tDice: %d\tResource: %s", this.name, this.number, this.resource);
+	}
 
 //	Moved to Subject Class.
 //	@Override

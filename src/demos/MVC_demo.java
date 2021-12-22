@@ -13,5 +13,7 @@ public class MVC_demo {
 		Controller controller = new Controller();
 		
 		Viewer viewer = new Viewer();
+		
+		viewer.db.draw_board();
 	}
 }

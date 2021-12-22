@@ -8,6 +8,10 @@ import cards.Coco_Tile_Free_Cutlass_Goat;
 import cards.Coco_Tile_Free_Structure;
 import cards.Coco_Tile_Free_Wood_Molasses;
 import cards.Coco_Tile_Ghost_Pirate;
+import cards.Cutlass;
+import cards.Goat;
+import cards.Gold;
+import cards.Molasses;
 import cards.Resource;
 import cards.Wood;
 import decks.Coco_Deck;
@@ -129,44 +133,225 @@ public class Board
 		return deck;
 	}
 	
+	/* Create Islands A to M.
+	 * Returns Array List of Islands.
+	 */
+	private ArrayList<Island> create_islands()
+	{
+		Resource wood = new Wood();
+		Resource cutlass = new Cutlass();
+		Resource gold = new Gold();
+		Resource goat = new Goat();
+		Resource molasses = new Molasses();
+			
+		ArrayList<Island> new_islands = new ArrayList<Island>();
+
+		new_islands.add(new Island("A", 3, wood));
+		new_islands.add(new Island("B", 4, cutlass));
+		new_islands.add(new Island("C", 1, cutlass));
+		new_islands.add(new Island("D", 5, gold));
+		new_islands.add(new Island("E", 1, wood));
+		new_islands.add(new Island("F", 2, wood));
+		// Ghost Pirate 	Island  G.
+		new_islands.add(new Island("H", 3, goat));
+		new_islands.add(new Island("I", 4, goat));
+		new_islands.add(new Island("J", 3, gold));
+		new_islands.add(new Island("K", 4, molasses));
+		new_islands.add(new Island("L", 2, molasses));
+		new_islands.add(new Island("M", 5, goat));
+		
+		return new_islands;
+	}
+	
+	/* Create Lairs 1 to 32.
+	 * Return array list of lairs.
+	 */
+	private ArrayList<Lair> create_lairs()
+	{
+		ArrayList<Lair> new_lairs = new ArrayList<Lair>();
+		
+		int n = 32;
+		
+		for(int i = 1; i <= n; i++)
+			new_lairs.add(new Lair(i));
+		
+		return new_lairs;
+	}
+	
+	/* Add the Lairs to the Islands.
+	 * Because it is a fixed board game it must
+	 * be a fixed setup.
+	 */
+	private void place_lairs(ArrayList<Island> islands, ArrayList<Lair> lairs)
+	{
+		for(Island i: islands)
+		{
+			switch(i.name)
+			{
+				case "A":
+					i.lairs.add(lairs.get(0));
+					i.lairs.add(lairs.get(1));
+					i.lairs.add(lairs.get(2));
+					i.lairs.add(lairs.get(3));
+					i.lairs.add(lairs.get(4));
+					i.lairs.add(lairs.get(5));
+
+					break;
+				
+				case "B":
+					i.lairs.add(lairs.get(4));
+					i.lairs.add(lairs.get(5));
+					i.lairs.add(lairs.get(6));
+					i.lairs.add(lairs.get(7));
+					break;
+					
+				case "C":
+					i.lairs.add(lairs.get(2));
+					i.lairs.add(lairs.get(3));
+					i.lairs.add(lairs.get(8));
+					i.lairs.add(lairs.get(9));
+					break;
+					
+				case "D":
+					i.lairs.add(lairs.get(2));
+					i.lairs.add(lairs.get(3));
+					i.lairs.add(lairs.get(7));
+					i.lairs.add(lairs.get(8));
+					i.lairs.add(lairs.get(11));
+					i.lairs.add(lairs.get(12));
+					break;
+					
+				case "E":
+					i.lairs.add(lairs.get(6));
+					i.lairs.add(lairs.get(7));
+					i.lairs.add(lairs.get(10));
+					i.lairs.add(lairs.get(11));
+					i.lairs.add(lairs.get(14));
+					i.lairs.add(lairs.get(15));
+					break;
+					
+				case "F":
+					i.lairs.add(lairs.get(8));
+					i.lairs.add(lairs.get(9));
+					i.lairs.add(lairs.get(12));
+					i.lairs.add(lairs.get(13));
+					i.lairs.add(lairs.get(16));
+					i.lairs.add(lairs.get(17));
+					break;
+					
+				case "G":
+					i.lairs.add(lairs.get(11));
+					i.lairs.add(lairs.get(12));
+					i.lairs.add(lairs.get(15));
+					i.lairs.add(lairs.get(16));
+					i.lairs.add(lairs.get(19));
+					i.lairs.add(lairs.get(20));
+					break;
+					
+				case "H":
+					i.lairs.add(lairs.get(14));
+					i.lairs.add(lairs.get(15));
+					i.lairs.add(lairs.get(18));
+					i.lairs.add(lairs.get(19));
+					i.lairs.add(lairs.get(22));
+					i.lairs.add(lairs.get(23));
+					break;
+					
+				case "I":
+					i.lairs.add(lairs.get(17));
+					i.lairs.add(lairs.get(17));
+					i.lairs.add(lairs.get(20));
+					i.lairs.add(lairs.get(21));
+					i.lairs.add(lairs.get(24));
+					i.lairs.add(lairs.get(25));
+					break;
+					
+				case "J":
+					i.lairs.add(lairs.get(19));
+					i.lairs.add(lairs.get(20));
+					i.lairs.add(lairs.get(23));
+					i.lairs.add(lairs.get(24));
+					i.lairs.add(lairs.get(26));
+					i.lairs.add(lairs.get(27));
+					break;
+					
+				case "K":
+					i.lairs.add(lairs.get(22));
+					i.lairs.add(lairs.get(23));
+					i.lairs.add(lairs.get(26));
+					i.lairs.add(lairs.get(28));
+					break;
+					
+				case "L":
+					i.lairs.add(lairs.get(24));
+					i.lairs.add(lairs.get(25));
+					i.lairs.add(lairs.get(27));
+					i.lairs.add(lairs.get(29));
+					break;
+					
+				case "M":
+					i.lairs.add(lairs.get(26));
+					i.lairs.add(lairs.get(27));
+					i.lairs.add(lairs.get(28));
+					i.lairs.add(lairs.get(29));
+					i.lairs.add(lairs.get(30));
+					i.lairs.add(lairs.get(31));
+					break;
+				
+				default:
+					System.out.printf("Island %s, No lairs found.", i.name);
+			} // End Island Name Switch Statement.
+		} // End Island Loop.
+		
+		// Attach lairs as observers for each Island.
+		for(Island i: islands)
+			i.attach_lairs();
+	} // End place_lairs function.
+	
 	private ArrayList<Island> setup_islands()
 	{
 		System.out.println("Setting up Islands...");
-		Resource wood = new Wood();
+
+		ArrayList<Island> made_islands = new ArrayList<Island>();
 		
-		ArrayList<Island> new_islands = new ArrayList<Island>();
+		ArrayList<Lair> made_lairs = new ArrayList<Lair>();
+
+		made_islands = this.create_islands();
 		
-		Island A = new Island("A", 3, wood);
+		made_lairs = this.create_lairs();
 		
-		new_islands.add(A);
+		this.place_lairs(made_islands, made_lairs);
 		
-		Lair l1 = new Lair(1);
-		Lair l2 = new Lair(2);
-		Lair l3 = new Lair(3);
+		
+//		Lair l1 = new Lair(1);
+//		Lair l2 = new Lair(2);
+//		Lair l3 = new Lair(3);
 		
 //		l3.set_owner(Table.getInstance().players.get(0)); // Set the white player to owner of lair 3.
 		
-		Lair l4 = new Lair(4);
-		Lair l5 = new Lair(5);
-		Lair l6 = new Lair(6);
+//		Lair l4 = new Lair(4);
+//		Lair l5 = new Lair(5);
+//		Lair l6 = new Lair(6);
 		
 //		l6.set_owner(this.players.get(1));
 		
-		A.attach(l1);
-		A.attach(l2);
-		A.attach(l3);
-		A.attach(l4);
-		A.attach(l5);
-		A.attach(l6);
+//		A.attach(l1);
+//		A.attach(l2);
+//		A.attach(l3);
+//		A.attach(l4);
+//		A.attach(l5);
+//		A.attach(l6);
 		
-		A.lairs.add(l1);
-		A.lairs.add(l2);
-		A.lairs.add(l3);
-		A.lairs.add(l4);
-		A.lairs.add(l5);
-		A.lairs.add(l6);
+//		A.lairs.add(l1);
+//		A.lairs.add(l2);
+//		A.lairs.add(l3);
+//		A.lairs.add(l4);
+//		A.lairs.add(l5);
+//		A.lairs.add(l6);
 		
-		return new_islands;
+//		A.attach_lairs();
+		
+		return made_islands;
 	}
 	
 	public void attach_islands()

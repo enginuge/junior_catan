@@ -6,9 +6,13 @@ package viewer;
  */
 public class Viewer
 {
+	public Draw_Board db;
+	
 	/* Constructor */
 	public Viewer()
 	{
-		
+		db = new Draw_Board();
 	}
+	
+	
 }
