@@ -18,8 +18,6 @@ public class Begin_Demo {
 		
 		Draw_Board view = new Draw_Board();
 		
-//		view.draw_board();
-		
 		table.board.islands.get(0).lairs.get(5).set_owner(table.players.get(2));
 		
 		view.draw_board();

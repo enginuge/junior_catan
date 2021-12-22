@@ -195,7 +195,6 @@ public class Board
 					i.lairs.add(lairs.get(3));
 					i.lairs.add(lairs.get(4));
 					i.lairs.add(lairs.get(5));
-
 					break;
 				
 				case "B":
@@ -322,34 +321,9 @@ public class Board
 		
 		this.place_lairs(made_islands, made_lairs);
 		
-		
-//		Lair l1 = new Lair(1);
-//		Lair l2 = new Lair(2);
-//		Lair l3 = new Lair(3);
-		
 //		l3.set_owner(Table.getInstance().players.get(0)); // Set the white player to owner of lair 3.
 		
-//		Lair l4 = new Lair(4);
-//		Lair l5 = new Lair(5);
-//		Lair l6 = new Lair(6);
-		
 //		l6.set_owner(this.players.get(1));
-		
-//		A.attach(l1);
-//		A.attach(l2);
-//		A.attach(l3);
-//		A.attach(l4);
-//		A.attach(l5);
-//		A.attach(l6);
-		
-//		A.lairs.add(l1);
-//		A.lairs.add(l2);
-//		A.lairs.add(l3);
-//		A.lairs.add(l4);
-//		A.lairs.add(l5);
-//		A.lairs.add(l6);
-		
-//		A.attach_lairs();
 		
 		return made_islands;
 	}
