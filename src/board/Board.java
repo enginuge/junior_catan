@@ -39,7 +39,7 @@ public class Board
 	{
 		System.out.println("Creating Board...\n");
 
-		coco_deck = this.setup_coco_tiles();
+		this.coco_deck = this.setup_coco_tiles();
 
 		this.islands = this.setup_islands();
 		
