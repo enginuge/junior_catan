@@ -3,6 +3,7 @@ package board;
 import java.util.ArrayList;
 
 import Die.Die;
+import Player.Player;
 import cards.Coco_Tile;
 import cards.Coco_Tile_Free_Cutlass_Goat;
 import cards.Coco_Tile_Free_Structure;
@@ -50,51 +51,8 @@ public class Board
 	{
 		this.coco_deck = this.setup_coco_tiles();
 
-		this.islands = this.setup_islands();	
+		this.islands = this.setup_islands();
 	}
-	
-//	public void setup_board(int player_count)
-//	{
-//		this.set_player_count(player_count);
-//	}
-	
-//	public void set_player_count(int count)
-//	{
-//		this.player_count = count;
-//	}
-//	
-//	public int get_player_count()
-//	{
-//		return this.player_count;
-//	}
-	
-//	public void create_players() 
-//	{
-////		for(int i; i < this.player_count; i++)
-////		{
-////			Player
-////			this.players.add(null)
-////		}
-//		if(this.player_count==3)
-//		{
-//			this.players.add(one);
-//			
-//			this.players.add(two);
-//			
-//			this.players.add(three);
-//		}
-//		
-//		if(this.player_count==4)
-//		{
-//			this.players.add(one);
-//			
-//			this.players.add(two);
-//			
-//			this.players.add(three);
-//			
-//			this.players.add(four);
-//		}
-//	}
 	
 	private Coco_Deck setup_coco_tiles()
 	{
@@ -346,6 +304,17 @@ public class Board
 		}
 	}
 	
+	public void set_lair_owner(int lair_id, Player player)
+	{
+		for(Island i: this.islands)
+		{
+			for(Lair l: i.lairs)
+			{
+				if(l.identity == lair_id)
+					l.set_owner(player);
+			}
+		}
+	}
 	public String toString()
 	{
 		String output;

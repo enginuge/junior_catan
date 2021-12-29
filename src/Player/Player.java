@@ -22,6 +22,11 @@ public class Player
 		this.hand.add_resource(o);
 	}
 	
+	public String get_name()
+	{
+		return this.name;
+	}
+	
 	public String toString()
 	{
 		return String.format("Name: %s", this.name);
