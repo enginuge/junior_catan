@@ -39,10 +39,18 @@ public class Board
 	{
 		System.out.println("Creating Board...\n");
 
+//		// Moved to Setup method to keep the specific functions private.
+//		this.coco_deck = this.setup_coco_tiles();
+//
+//		this.islands = this.setup_islands();
+		
+	}
+	
+	public void setup()
+	{
 		this.coco_deck = this.setup_coco_tiles();
 
-		this.islands = this.setup_islands();
-		
+		this.islands = this.setup_islands();	
 	}
 	
 //	public void setup_board(int player_count)

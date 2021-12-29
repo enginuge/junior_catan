@@ -34,13 +34,15 @@ public class Table
 	{
 		System.out.printf("Creating Table...\n");
 		
-		players = this.create_players();
+//		this.players = this.create_players();
 		
-		board = Board.getInstance(); // Only get the board after the players are made.
+		this.board = Board.getInstance(); // Only get the board after the players are made.
 		
-		die = Die.getInstance();
-		
-		board.attach_islands();
+		this.die = Die.getInstance();
+
+//		Must be done after the Die is created.
+		// But shouldn't matter as die is a singleton.
+//		this.board.attach_islands();
 	}
 	
 	/*

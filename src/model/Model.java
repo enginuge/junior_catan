@@ -12,7 +12,16 @@ import game.Table;
 public class Model {
 	
 	public Table table;
-	
+
+	private static Model uniqueInstance = null;
+
+	public static Model getInstance()
+	{
+		if(uniqueInstance == null)
+			uniqueInstance = new Model();
+		
+		return uniqueInstance;
+	}
 	public Model()
 	{
 		table = new Table();

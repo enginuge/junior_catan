@@ -14,6 +14,11 @@ public class MVC_demo {
 		
 		Viewer viewer = new Viewer();
 		
+		controller.setup_game();
+		
 		viewer.db.draw_board();
+		
+		// Turn one players must pick their starting points.
+		// The lairs must be owned by the players.
 	}
 }
