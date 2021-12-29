@@ -3,6 +3,7 @@ package controller;
 import Player.Player;
 import board.Lair;
 import model.Model;
+import viewer.Viewer;
 
 /* The class responsible for interacting with the viewer
  * and the model.
@@ -29,6 +30,8 @@ public class Controller
 	}
 
 	Model model = Model.getInstance();
+	
+	Viewer viewer = Viewer.getInstance()
 	
 	public void setup_game()
 	{
@@ -88,4 +91,28 @@ public class Controller
 			} // end of switch
 		} // end of player loop
 	} // end of lair owner function.
+	
+	/* The game runs persistently until someone wins.
+	 * 
+	 */
+	public void persistence()
+	{
+		boolean keep_playing = true;
+		
+		while(keep_playing)
+		{
+			// Check Players Scores.
+			for(Player p: this.model.table.players)
+			{
+				if(p.score <= 7)
+					keep_playing = false;
+			}
+			
+			if(keep_playing)
+			{
+				viewer.ask_to_roll();
+			}
+			
+		}
+	}
 } // end of class.

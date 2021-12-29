@@ -8,11 +8,15 @@ public class Player
 	
 	public Hand hand; // hand with both decks.
 	
+	public int score;
+	
 	public Player(String name)
 	{
 		this.name = name;
 		
 		this.hand = new Hand();
+		
+		this.score = 0;
 	}
 	
 	public void collect_resource(Object o)
