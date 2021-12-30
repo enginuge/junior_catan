@@ -16,7 +16,7 @@ public class Ask_Yes_No implements PlayerInput
 	
 	@Override
 	public String prompt() {
-		String message = String.format("Player %s, Yes or No?", this.player.get_name());
+		String message = String.format("Player %s, Yes or No?\n", this.player.get_name());
 		
 		return message;
 	}
@@ -38,13 +38,10 @@ public class Ask_Yes_No implements PlayerInput
 			// Ensure the player picks an actual option.
 			for(choice=""; !options.contains(choice); )
 			{
-				for(String c:options)
-					System.out.printf("%s ", c);
+//				for(String c:options)
+//					System.out.printf("%s ", c);
 				
-				System.out.printf("\nPlayer?\n");
-
-				if(sc.hasNextLine())
-					choice = sc.nextLine();
+				choice = sc.nextLine();
 				
 			} // end correct color loop.
 			

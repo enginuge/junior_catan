@@ -57,14 +57,14 @@ public class Controller
 			switch(p.get_name())
 			{
 				case "Orange":
-					this.model.table.board.set_lair_owner(3, p);
+					this.model.table.board.set_lair_owner(6, p);
 					
 					this.model.table.board.set_lair_owner(26, p);
 					
 					break;
 				
 				case "White":
-					this.model.table.board.set_lair_owner(6, p);
+					this.model.table.board.set_lair_owner(3, p);
 					
 					this.model.table.board.set_lair_owner(23, p);
 					
@@ -115,20 +115,21 @@ public class Controller
 				}
 			}
 			
-			for(t=0; keep_playing; t++ )
+			for(t=0; t<model.table.player_count; t++ )
 			{
-				t%=model.table.player_count;
-				
 				current_player = model.table.players.get(t);
 				
-				for( a="No"; a=="No"; )
+				for(a="No"; a.equals("No"); )
 				{
 					a = viewer.ask_to_roll(current_player);	
-					
 				}
 				
-				if(a=="Yes")
-					current_player.score++;
+				if(a.equals("Yes"))
+				{
+					model.table.die.roll();
+					
+					viewer.display_roll();
+				}
 
 			}
 		} // Game ends.

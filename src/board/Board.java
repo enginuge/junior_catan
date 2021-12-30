@@ -86,7 +86,7 @@ public class Board
 		for(i = 0; i < i_fs; i++)
 			deck.add(free_structure);
 		
-		// Add the cutlass-goat tiles.
+		// Add the cut lass goat tiles.
 		for(i = 0; i < i_fcg; i++)
 			deck.add(free_cutlass_goat);
 		
@@ -118,9 +118,9 @@ public class Board
 		new_islands.add(new Island("D", 5, gold));
 		new_islands.add(new Island("E", 1, wood));
 		new_islands.add(new Island("F", 2, wood));
-		// Ghost Pirate 	Island  G.
-		new_islands.add(new Island("H", 3, goat));
-		new_islands.add(new Island("I", 4, goat));
+		// Ghost Pirate 	Island  G.	6
+		new_islands.add(new Island("H", 2, goat));
+		new_islands.add(new Island("I", 1, goat));
 		new_islands.add(new Island("J", 3, gold));
 		new_islands.add(new Island("K", 4, molasses));
 		new_islands.add(new Island("L", 2, molasses));

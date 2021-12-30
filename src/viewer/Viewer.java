@@ -31,13 +31,26 @@ public class Viewer
 	{
 		Ask_Yes_No ask = new Ask_Yes_No(player);
 		
+		System.out.printf("Are you ready to roll?\n");
+		
 		return ask.get_input();
 		
 	}
 	
+	public String display_roll()
+	{
+		String message;
+		
+		message = String.format("Rolled a %d.\n", Model.getInstance().table.die.one2six());
+		
+		System.out.printf(message);
+		
+		return message;
+	}
+	
 	public String game_over()
 	{
-		String message = String.format("Player %s Wins the Game!", Model.getInstance().get_winner());
+		String message = String.format("Player %s Wins the Game!\n", Model.getInstance().get_winner());
 		
 		return message;
 	}
