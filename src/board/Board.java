@@ -3,6 +3,7 @@ package board;
 import java.util.ArrayList;
 
 import Die.Die;
+import Player.Player;
 import cards.Coco_Tile;
 import cards.Coco_Tile_Free_Cutlass_Goat;
 import cards.Coco_Tile_Free_Structure;
@@ -39,54 +40,19 @@ public class Board
 	{
 		System.out.println("Creating Board...\n");
 
-		this.coco_deck = this.setup_coco_tiles();
-
-		this.islands = this.setup_islands();
+//		// Moved to Setup method to keep the specific functions private.
+//		this.coco_deck = this.setup_coco_tiles();
+//
+//		this.islands = this.setup_islands();
 		
 	}
 	
-//	public void setup_board(int player_count)
-//	{
-//		this.set_player_count(player_count);
-//	}
-	
-//	public void set_player_count(int count)
-//	{
-//		this.player_count = count;
-//	}
-//	
-//	public int get_player_count()
-//	{
-//		return this.player_count;
-//	}
-	
-//	public void create_players() 
-//	{
-////		for(int i; i < this.player_count; i++)
-////		{
-////			Player
-////			this.players.add(null)
-////		}
-//		if(this.player_count==3)
-//		{
-//			this.players.add(one);
-//			
-//			this.players.add(two);
-//			
-//			this.players.add(three);
-//		}
-//		
-//		if(this.player_count==4)
-//		{
-//			this.players.add(one);
-//			
-//			this.players.add(two);
-//			
-//			this.players.add(three);
-//			
-//			this.players.add(four);
-//		}
-//	}
+	public void setup()
+	{
+		this.coco_deck = this.setup_coco_tiles();
+
+		this.islands = this.setup_islands();
+	}
 	
 	private Coco_Deck setup_coco_tiles()
 	{
@@ -120,7 +86,7 @@ public class Board
 		for(i = 0; i < i_fs; i++)
 			deck.add(free_structure);
 		
-		// Add the cutlass-goat tiles.
+		// Add the cut lass goat tiles.
 		for(i = 0; i < i_fcg; i++)
 			deck.add(free_cutlass_goat);
 		
@@ -152,9 +118,9 @@ public class Board
 		new_islands.add(new Island("D", 5, gold));
 		new_islands.add(new Island("E", 1, wood));
 		new_islands.add(new Island("F", 2, wood));
-		// Ghost Pirate 	Island  G.
-		new_islands.add(new Island("H", 3, goat));
-		new_islands.add(new Island("I", 4, goat));
+		// Ghost Pirate 	Island  G.	6
+		new_islands.add(new Island("H", 2, goat));
+		new_islands.add(new Island("I", 1, goat));
 		new_islands.add(new Island("J", 3, gold));
 		new_islands.add(new Island("K", 4, molasses));
 		new_islands.add(new Island("L", 2, molasses));
@@ -338,6 +304,17 @@ public class Board
 		}
 	}
 	
+	public void set_lair_owner(int lair_id, Player player)
+	{
+		for(Island i: this.islands)
+		{
+			for(Lair l: i.lairs)
+			{
+				if(l.identity == lair_id)
+					l.set_owner(player);
+			}
+		}
+	}
 	public String toString()
 	{
 		String output;

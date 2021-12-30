@@ -1,5 +1,6 @@
 package model;
 
+import Player.Player;
 import game.Table;
 
 /*
@@ -12,10 +13,33 @@ import game.Table;
 public class Model {
 	
 	public Table table;
+
+	private static Model uniqueInstance = null;
 	
+	private Player winner;
+
+	public static Model getInstance()
+	{
+		if(uniqueInstance == null)
+			uniqueInstance = new Model();
+		
+		return uniqueInstance;
+	}
 	public Model()
 	{
 		table = new Table();
+	}
+	
+	public Player set_winner(Player p)
+	{
+		this.winner = p;
+		
+		return this.winner;
+	}
+	
+	public Player get_winner()
+	{
+		return this.winner;
 	}
 
 }

@@ -8,11 +8,15 @@ public class Player
 	
 	public Hand hand; // hand with both decks.
 	
+	public int score;
+	
 	public Player(String name)
 	{
 		this.name = name;
 		
 		this.hand = new Hand();
+		
+		this.score = 0;
 	}
 	
 	public void collect_resource(Object o)
@@ -20,6 +24,11 @@ public class Player
 		System.out.printf("%s has collected %s.\n", this.name, o);
 		
 		this.hand.add_resource(o);
+	}
+	
+	public String get_name()
+	{
+		return this.name;
 	}
 	
 	public String toString()

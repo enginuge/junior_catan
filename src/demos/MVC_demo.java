@@ -14,6 +14,11 @@ public class MVC_demo {
 		
 		Viewer viewer = new Viewer();
 		
+		controller.setup_game();
+		
 		viewer.db.draw_board();
+		
+		controller.persistence();
+		
 	}
 }
