@@ -130,6 +130,8 @@ public class Controller
 					
 					viewer.display_roll();
 				}
+				
+				viewer.show_inventory(current_player);
 
 			}
 		} // Game ends.
