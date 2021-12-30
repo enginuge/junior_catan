@@ -14,6 +14,8 @@ import board.Board;
  */
 public class Table 
 {	
+	public int player_count;
+	
 	public ArrayList<Player> players = new ArrayList<Player>();
 	
 	public Board board;
@@ -58,7 +60,7 @@ public class Table
 		
 		System.out.print("How many Players: ");  
 		
-		int player_count= sc.nextInt();  
+		this.player_count= sc.nextInt();  
 		sc.nextLine(); // Work around nextint skipping the first player name.
 		
 		System.out.println("Player Count= " + player_count); 
@@ -100,7 +102,7 @@ public class Table
 			
 		} // end player color selection loop.
 		
-		sc.close(); // Close the scanner.
+//		sc.close(); // Close the scanner.
 		
 		return players;
 	} 

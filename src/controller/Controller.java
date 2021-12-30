@@ -31,7 +31,7 @@ public class Controller
 
 	Model model = Model.getInstance();
 	
-	Viewer viewer = Viewer.getInstance()
+	Viewer viewer = Viewer.getInstance();
 	
 	public void setup_game()
 	{
@@ -48,8 +48,6 @@ public class Controller
 		this.model.table.board.attach_islands();
 		
 		this.set_lair_owners();
-
-
 	}
 	
 	private void set_lair_owners()
@@ -99,20 +97,42 @@ public class Controller
 	{
 		boolean keep_playing = true;
 		
+		int t;
+		String a;
+		
+		Player current_player;
+		
 		while(keep_playing)
 		{
 			// Check Players Scores.
 			for(Player p: this.model.table.players)
 			{
-				if(p.score <= 7)
+				if(p.score >= 7)
+				{
 					keep_playing = false;
+					
+					model.set_winner(p);
+				}
 			}
 			
-			if(keep_playing)
+			for(t=0; keep_playing; t++ )
 			{
-				viewer.ask_to_roll();
+				t%=model.table.player_count;
+				
+				current_player = model.table.players.get(t);
+				
+				for( a="No"; a=="No"; )
+				{
+					a = viewer.ask_to_roll(current_player);	
+					
+				}
+				
+				if(a=="Yes")
+					current_player.score++;
+
 			}
-			
-		}
+		} // Game ends.
+		
+		viewer.game_over();
 	}
 } // end of class.

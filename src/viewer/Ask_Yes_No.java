@@ -3,11 +3,20 @@ package viewer;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import Player.Player;
+
 public class Ask_Yes_No implements PlayerInput
 {
+	private Player player;
+	
+	public Ask_Yes_No(Player p)
+	{
+		player = p;
+	}
+	
 	@Override
 	public String prompt() {
-		String message = String.format("Yes or No?", null);
+		String message = String.format("Player %s, Yes or No?", this.player.get_name());
 		
 		return message;
 	}
@@ -24,7 +33,7 @@ public class Ask_Yes_No implements PlayerInput
 		
 		boolean valid = false;
 		
-		for(int i=0; !valid; i++)
+		for(; !valid;)
 		{
 			// Ensure the player picks an actual option.
 			for(choice=""; !options.contains(choice); )
@@ -32,7 +41,11 @@ public class Ask_Yes_No implements PlayerInput
 				for(String c:options)
 					System.out.printf("%s ", c);
 				
-				choice = sc.nextLine();
+				System.out.printf("\nPlayer?\n");
+
+				if(sc.hasNextLine())
+					choice = sc.nextLine();
+				
 			} // end correct color loop.
 			
 			if(options.contains(choice))
@@ -43,7 +56,7 @@ public class Ask_Yes_No implements PlayerInput
 			
 		} // end selection loop.
 		
-		sc.close(); // Close the scanner.
+//		sc.close(); // Close the scanner.
 
 		return choice;
 

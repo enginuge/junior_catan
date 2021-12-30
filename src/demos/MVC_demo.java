@@ -18,6 +18,7 @@ public class MVC_demo {
 		
 		viewer.db.draw_board();
 		
+		controller.persistence();
 		
 	}
 }
