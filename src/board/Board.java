@@ -147,6 +147,7 @@ public class Board
 	/* Add the Lairs to the Islands.
 	 * Because it is a fixed board game it must
 	 * be a fixed setup.
+	 * Also attaches the Lairs as observers of the islands.
 	 */
 	private void place_lairs(ArrayList<Island> islands, ArrayList<Lair> lairs)
 	{
@@ -287,21 +288,13 @@ public class Board
 		
 		this.place_lairs(made_islands, made_lairs);
 		
-//		l3.set_owner(Table.getInstance().players.get(0)); // Set the white player to owner of lair 3.
-		
-//		l6.set_owner(this.players.get(1));
-		
 		return made_islands;
 	}
 	
 	public void attach_islands()
 	{
 		for(Island i: this.islands)
-		{
-			Die.getInstance().attach(i);			
-
-			i.attach_lairs();
-		}
+			Die.getInstance().attach(i);	// Attach every Island as an Observer of the Die.
 	}
 	
 	public void set_lair_owner(int lair_id, Player player)
@@ -320,8 +313,6 @@ public class Board
 		String output;
 		
 		output = String.format("Board\nPlayer Count:\t%d", this.player_count);
-		
-//		System.out.println(output);
 		
 		return output;
 	}

@@ -42,7 +42,6 @@ public class Island extends Subject implements Observer
 	@Override
 	public void update()
 	{
-		System.out.println("Update Island.");
 		if(this.number == Die.getInstance().one2six())
 			this.notify_observers(this.resource);
 	}
