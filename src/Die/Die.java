@@ -30,9 +30,11 @@ public class Die extends Subject
 	
 	public int roll()
 	{
+		System.out.println("Rolling Die.");
 		this.result = this.random.nextInt(6);
 		
 		this.set_state(this.result);
+//		this.set_state(this.random.nextInt(6));
 		
 		return this.result;
 	}

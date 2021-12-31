@@ -31,6 +31,11 @@ public class Player
 		return this.name;
 	}
 	
+	public int get_score()
+	{
+		return this.score;
+	}
+	
 	public String toString()
 	{
 		return String.format("Name: %s", this.name);

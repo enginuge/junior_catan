@@ -77,6 +77,7 @@ public class Resource_Deck implements Deck
 	public String toString()
 	{
 		String s = "Resource Deck:\n";
+		
 		for(int i=0; i < resources.size(); i++)
 		{
 			s = s + String.format("%s, ", resources.get(i));

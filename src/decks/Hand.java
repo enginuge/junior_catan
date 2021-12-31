@@ -21,4 +21,9 @@ public class Hand
 	{
 		this.resource_deck.add(o);
 	}
+	
+	public String resource_string()
+	{
+		return this.resource_deck.toString();
+	}
 }
