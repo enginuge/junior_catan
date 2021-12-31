@@ -99,6 +99,7 @@ public class Controller
 		
 		int t;
 		String a;
+		String action; // the move the player wants to make. 
 		
 		Player current_player;
 		
@@ -132,6 +133,32 @@ public class Controller
 				}
 				
 				viewer.show_inventory(current_player);
+				
+				// Ask for the next move.
+				action = viewer.ask_for_action(current_player);
+				
+				switch(action)
+				{
+					case "Build":
+						viewer.ask_to_build(current_player);
+						
+						break;
+						
+					case "Trade":
+						
+						break;
+						
+					default:
+						break;
+				}
+				// Do the next move.
+				
+				// Possibly followed by another move after trading
+			
+				// Trade and then build or build and then trade.
+				// Or many times in no order.
+				// Either stop by knowing the player can do no more.
+				// Or ask them to end their turn.
 
 			}
 		} // Game ends.

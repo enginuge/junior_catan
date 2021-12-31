@@ -34,7 +34,20 @@ public class Viewer
 		System.out.printf("Are you ready to roll?\n");
 		
 		return ask.get_input();
+	}
+	
+	public String ask_for_action(Player p)
+	{
+		Get_Action ga = new Get_Action(p);
 		
+		return ga.get_input();
+	}
+	
+	public String ask_to_build(Player p)
+	{
+		Ask_Building ab = new Ask_Building(p);
+		
+		return ab.get_input();
 	}
 	
 	public String display_roll()

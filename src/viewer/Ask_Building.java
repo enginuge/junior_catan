@@ -5,18 +5,18 @@ import java.util.Scanner;
 
 import Player.Player;
 
-public class Get_Action implements PlayerInput
+public class Ask_Building implements PlayerInput
 {
 	private Player player;
 	
-	public Get_Action(Player p)
+	public Ask_Building(Player p)
 	{
 		this.player = p;
 	}
-	
 	@Override
-	public String prompt() {
-		return String.format("%s What would you like to do?\nBuild or Trade.\n", this.player.get_name());
+	public String prompt() 
+	{
+		return String.format("%s what would you like to build?\nA Boat or a Lair?", this.player.get_name());
 	}
 
 	@Override
@@ -25,9 +25,8 @@ public class Get_Action implements PlayerInput
 		Scanner sc= new Scanner(System.in);    //System.in is a standard input stream  
 
 		ArrayList<String> options = new ArrayList<String>();
-//		options.add("Roll");
-		options.add("Build");
-		options.add("Trade");
+		options.add("Lair");
+		options.add("Boat");
 		
 		String choice = "";
 		
@@ -41,7 +40,7 @@ public class Get_Action implements PlayerInput
 //				for(String c:options)
 //					System.out.printf("%s ", c);
 				
-//				System.out.printf("\nPlayer %s: ", i+1);
+				System.out.printf("\nPlayer %s: ", this.player.get_name());
 				
 				choice = sc.nextLine();
 			} // end correct color loop.
@@ -60,7 +59,7 @@ public class Get_Action implements PlayerInput
 	}
 
 	@Override
-	public String get_input()
+	public String get_input() 
 	{
 		System.out.printf(this.prompt());
 		
