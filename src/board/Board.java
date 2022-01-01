@@ -26,6 +26,8 @@ public class Board
 	
 	public ArrayList<Island> islands = new ArrayList<Island>(); 
 
+	public ArrayList<Channel> channels = new ArrayList<Channel>();
+	
 	private static Board uniqueInstance = null;
 
 	public static Board getInstance()
@@ -143,6 +145,21 @@ public class Board
 		
 		return new_lairs;
 	}
+	
+	public ArrayList<Channel> create_channels()
+	{
+		ArrayList<Channel> new_channels = new ArrayList<Channel>();
+		
+		int n = 37;
+		
+//		for(int i = 0; i < n; i++)
+//		{
+//			new_channels.add(new Channel());
+//		}
+		
+		return new_channels;
+	}
+	
 	
 	/* Add the Lairs to the Islands.
 	 * Because it is a fixed board game it must

@@ -57,12 +57,10 @@ public abstract class Get_Input implements PlayerInput
 		
 		for(int i = 0; i < size; i++)
 		{
-//			String.format("%s, %s", output, this.options.get(i));
 			output += this.options.get(i);
 			
 			if(i == (size-1) )
 				output += ".\n";
-//				String.format("%s.\n", output);
 			
 			else
 				output += ", ";
@@ -88,17 +86,14 @@ public abstract class Get_Input implements PlayerInput
 				System.out.printf("%s", this.string_options());
 				
 				choice = sc.nextLine();
-			} // end correct color loop.
+			} // end correct choice loop.
 			
 			if(options.contains(choice))
 				valid = true;
 			
 			else
 				System.out.printf("%s\n", this.get_prompt());
-
-			
-		} // end player color selection loop.
-		
+		} // end valid option loop.
 
 		return choice;
 	}
