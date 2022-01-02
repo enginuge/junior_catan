@@ -33,4 +33,21 @@ public class Channel {
 		// All okay.
 		return 0;
 	}
+	
+	public boolean equals(Channel other)
+	{
+		if(this.lairs.get(0).equals(other.lairs.get(0)) )
+		{
+			if(this.lairs.get(1).equals(other.lairs.get(1)) )
+					return true;
+		}
+		
+		else if(this.lairs.get(0).equals(other.lairs.get(1)) )
+		{
+			if(this.lairs.get(1).equals(other.lairs.get(0)) )
+					return true;
+		}
+
+		return false;
+	}
 }

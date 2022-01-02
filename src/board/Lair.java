@@ -14,7 +14,7 @@ import observable.Observer;
 public class Lair implements Observer
 {
 	// THe  number to identify the lair on the board.
-	public int identity=0;
+	private int identity=0;
 	
 	public boolean occupied;
 	
@@ -36,6 +36,11 @@ public class Lair implements Observer
 		// Build Neighbors too, as an input perhaps.
 	}
 	
+	public int get_id()
+	{
+		return this.identity;
+	}
+	
 	public int set_owner(Player player)
 	{
 		this.occupied = true;
@@ -45,6 +50,17 @@ public class Lair implements Observer
 		
 		// all okay.
 		return 0;
+	}
+	
+	public Channel add_neighbour(Lair neighbour)
+	{
+		Channel new_channel = new Channel(this, neighbour);
+		
+		this.neighbours.add(neighbour);
+		
+		this.channels.add(new_channel);
+		
+		return new_channel;
 	}
 
 	/*

@@ -25,6 +25,8 @@ public class Board
 	public Coco_Deck coco_deck; // Deck to hold the coco_tiles.
 	
 	public ArrayList<Island> islands = new ArrayList<Island>(); 
+	
+	public ArrayList<Lair> lairs = new ArrayList<Lair>(); 
 
 	public ArrayList<Channel> channels = new ArrayList<Channel>();
 	
@@ -156,8 +158,41 @@ public class Board
 //		{
 //			new_channels.add(new Channel());
 //		}
+		// Need to connect all the lairs together with known connections
+		// eg. 1 to 2 and 1 to 6.
+		// They are irregular.
+		
+		// Mark the neighbouring lairs into the lairs themselves, 1 to 2 and 1 to 6...
+		// Make a method that creeates a channel between them.
+		// And another method that marks it as occupied in both lairs. or each lair checks from both lairs perspectives...
 		
 		return new_channels;
+	}
+	
+	public Lair get_lair_by_id(ArrayList<Lair> lairs, int id)
+	{
+		for(Lair l: lairs)
+		{
+			if(l.get_id() == id)
+				return l;
+		}
+		
+		return new Lair(0);
+	}
+	
+	/* Use on the full list of lairs. */
+	public ArrayList<Lair> connect_lairs(ArrayList<Lair> lairs)
+	{
+		for(Lair l: lairs)
+		{
+			switch(l.get_id())
+			{
+				case 1:
+					
+					break;
+				
+			}
+		}
 	}
 	
 	
@@ -320,7 +355,7 @@ public class Board
 		{
 			for(Lair l: i.lairs)
 			{
-				if(l.identity == lair_id)
+				if(l.get_id() == lair_id)
 					l.set_owner(player);
 			}
 		}
