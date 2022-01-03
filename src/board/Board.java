@@ -152,12 +152,25 @@ public class Board
 	{
 		ArrayList<Channel> new_channels = new ArrayList<Channel>();
 		
+		int i;
+		
 		int n = 37;
 		
-//		for(int i = 0; i < n; i++)
-//		{
-//			new_channels.add(new Channel());
-//		}
+		for(i = 1; i <= n; i++)
+		{
+			new_channels.add(new Channel(i));
+		}
+		
+		for(Channel c: new_channels)
+		{
+			switch(c.get_id())
+			{
+				case(1):
+					c.add_lair(get_lair_by_id(lairs, 1));
+					c.add_lair(get_lair_by_id(lairs, 2));
+			}
+		}
+		
 		// Need to connect all the lairs together with known connections
 		// eg. 1 to 2 and 1 to 6.
 		// They are irregular.
@@ -193,6 +206,8 @@ public class Board
 				
 			}
 		}
+		
+		return lairs;
 	}
 	
 	

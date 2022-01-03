@@ -58,7 +58,7 @@ public class Lair implements Observer
 		
 		this.neighbours.add(neighbour);
 		
-		this.channels.add(new_channel);
+//		this.channels.add(new_channel);
 		
 		return new_channel;
 	}
@@ -77,6 +77,14 @@ public class Lair implements Observer
 	public void update() {
 		// TODO Auto-generated method stub
 		
+	}
+	
+	public boolean equals(Lair other)
+	{
+		if(this.get_id() == other.get_id())
+			return true;
+		
+		return false;
 	}
 	
 	public String toString()

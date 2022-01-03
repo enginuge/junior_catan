@@ -15,13 +15,37 @@ public class Channel {
 	
 	public Player owner;
 	
-	public Channel(Lair A, Lair B)
+	private int identity;
+	
+	public Channel(int id)
 	{
+		this.identity = id;
+		
 		this.occupied = false;
 		
-		this.lairs.add(A);
+		this.lairs.add(new Lair(0));
 		
-		this.lairs.add(B);		
+		this.lairs.add(new Lair(0));		
+	}
+	
+	public int get_id()
+	{
+		return this.identity;
+	}
+	
+	public void add_lair(Lair lair)
+	{
+		int n = 2;
+		
+		for(int i=0; i<n; i++)
+		{
+			if(this.lairs.get(i)==new Lair(0)) // the lair in the channel is 0 and unused,
+			{
+				this.lairs.set(i, lair);
+				
+				i = 2; // End the loop.
+			}
+		}
 	}
 	
 	public int set_owner(Player player)
@@ -50,4 +74,11 @@ public class Channel {
 
 		return false;
 	}
+	
+	public String toString()
+	{
+		return String.format("%s to %s", this.lairs.get(0), this.lairs.get(1));
+	}
+	
+	
 }
