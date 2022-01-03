@@ -1,4 +1,4 @@
-package viewer;
+package Viewer;
 
 /* Interface to make player inputs
  * become more standard for the controller's

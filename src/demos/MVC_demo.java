@@ -2,7 +2,7 @@ package demos;
 
 import controller.Controller;
 import model.Model;
-import viewer.Viewer;
+import Viewer.Viewer;
 
 public class MVC_demo {
 
