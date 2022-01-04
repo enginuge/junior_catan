@@ -61,12 +61,20 @@ public class Controller
 					
 					this.model.table.board.set_lair_owner(26, p);
 					
+					this.model.table.board.set_channel_owner(25, p);
+
+					this.model.table.board.set_channel_owner(10, p);
+
 					break;
 				
 				case "White":
 					this.model.table.board.set_lair_owner(3, p);
 					
 					this.model.table.board.set_lair_owner(23, p);
+					
+					this.model.table.board.set_channel_owner(3, p);
+
+					this.model.table.board.set_channel_owner(18, p);
 					
 					break;
 			
@@ -75,6 +83,10 @@ public class Controller
 					
 					this.model.table.board.set_lair_owner(29, p);
 					
+					this.model.table.board.set_channel_owner(5, p);
+					
+					this.model.table.board.set_channel_owner(16, p);
+
 					break;
 					
 				case "Blue":
@@ -82,6 +94,10 @@ public class Controller
 					
 					this.model.table.board.set_lair_owner(30, p);
 					
+					this.model.table.board.set_channel_owner(12, p);
+
+					this.model.table.board.set_channel_owner(23, p);
+
 					break;
 			
 				default:

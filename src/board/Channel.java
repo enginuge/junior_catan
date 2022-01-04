@@ -48,6 +48,13 @@ public class Channel {
 		}
 	}
 	
+	public void add_pair(Lair l1, Lair l2)
+	{
+		this.add_lair(l1);
+		
+		this.add_lair(l2);
+	}
+	
 	public int set_owner(Player player)
 	{
 		this.occupied = true;
