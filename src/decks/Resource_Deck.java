@@ -46,6 +46,11 @@ public class Resource_Deck implements Deck
 		
 		return false; // Did not remove.
 	}
+	
+	public List<Resource> list_resources()
+	{
+		return this.resources;
+	}
 
 	@Override
 	public void shuffle() 
@@ -72,6 +77,37 @@ public class Resource_Deck implements Deck
 				}
 			}
 		}
+	}
+	
+	public boolean cards_in(Resource_Deck smaller_deck)
+	{
+		List<Resource> temp_this = this.list_resources();
+		List<Resource> temp_small = smaller_deck.list_resources();
+		
+		if(temp_this.isEmpty())
+			return false;
+		
+		if(temp_small.isEmpty())
+			return false;
+
+		for(Resource r: temp_this)
+		{
+			for(Resource s: temp_small)
+			{
+				if(r.equals(s))
+				{
+					temp_this.remove(r);
+					
+					temp_small.remove(s);
+				}
+			}
+			
+		}
+		
+		if(!temp_small.isEmpty())
+			return true;
+		
+		return false;
 	}
 	
 	public String toString()

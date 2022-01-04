@@ -37,10 +37,6 @@ public class Controller
 	{
 		this.model.table.players = model.table.create_players();
 		
-//		model.table.board.coco_deck = model.table.board.setup_coco_tiles();
-//
-//		model.table.board.islands = model.table.board.setup_islands();
-		
 		this.model.table.board.setup();
 		
 		// Attach the Islands after the Die is created in Table.
@@ -116,6 +112,7 @@ public class Controller
 		int t;
 		String a;
 		String action; // the move the player wants to make. 
+		String build_choice;
 		
 		Player current_player;
 		
@@ -156,7 +153,9 @@ public class Controller
 				switch(action)
 				{
 					case "Build":
-						viewer.ask_to_build(current_player);
+						build_choice = viewer.ask_to_build(current_player);
+						
+						
 						
 						break;
 						
