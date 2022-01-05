@@ -38,5 +38,16 @@ public class Build_Ship extends Build_Turn
 		System.out.println(bs);
 	}
 	
+	@Override
+	public boolean act()
+	{
+		this.get_player().get_resource_deck().subtract_deck(this.get_cost());
+		
+		// needs to pick laier to build on.
+		// needs to gain 1 score when the lair is built.
+		
+		return false;
+	}
+	
 	
 }

@@ -1,7 +1,6 @@
 package controller;
 
 import Player.Player;
-import board.Lair;
 import model.Model;
 import viewer.Viewer;
 
@@ -114,6 +113,8 @@ public class Controller
 		String action; // the move the player wants to make. 
 		String build_choice;
 		
+		Turn turn;
+		
 		Player current_player;
 		
 		while(keep_playing)
@@ -155,11 +156,19 @@ public class Controller
 					case "Build":
 						build_choice = viewer.ask_to_build(current_player);
 						
+						if(build_choice == "Lair")
+							turn = new Build_Lair(current_player);
 						
+						else if(build_choice == "Ship")
+							turn = new Build_Ship(current_player);
 						
 						break;
 						
 					case "Trade":
+						
+						break;
+						
+					case "Finish":
 						
 						break;
 						
@@ -174,7 +183,7 @@ public class Controller
 				// Or many times in no order.
 				// Either stop by knowing the player can do no more.
 				// Or ask them to end their turn.
-
+				
 			}
 		} // Game ends.
 		

@@ -54,7 +54,7 @@ public class Lair implements Observer
 	
 	public Channel add_neighbour(Lair neighbour)
 	{
-		Channel new_channel = new Channel(this, neighbour);
+		Channel new_channel = new Channel(0);
 		
 		this.neighbours.add(neighbour);
 		

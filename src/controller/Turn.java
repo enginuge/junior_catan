@@ -18,5 +18,7 @@ public abstract class Turn
 	{
 		return player;
 	}
+	
+	public abstract boolean act(); 
 
 }

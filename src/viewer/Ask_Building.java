@@ -10,7 +10,7 @@ public class Ask_Building extends Get_Input
 		
 		this.add_option("Lair");
 		
-		this.add_option("Boat");
+		this.add_option("Ship");
 		
 		this.set_prompt(this.player_name() + " what would you like to build?\nA Boat or a Lair?");
 	}

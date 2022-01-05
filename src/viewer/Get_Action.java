@@ -12,6 +12,8 @@ public class Get_Action extends Get_Input
 		
 		this.add_option("Trade");
 		
+		this.add_option("Finish");
+		
 		this.set_prompt(this.player_name()+" what would you like to do?\n");
 
 	}

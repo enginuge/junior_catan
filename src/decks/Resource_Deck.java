@@ -105,13 +105,35 @@ public class Resource_Deck implements Deck
 					temp_small.remove(s);
 				}
 			}
-			
 		}
 		
 		if(!temp_small.isEmpty())
 			return true;
 		
 		return false;
+	}
+	
+	public Resource_Deck subtract_deck(Resource_Deck other)
+	{
+		if(!this.cards_in(other))
+			return this;
+		
+		List<Resource> temp_other = other.list_resources();
+
+		for(Resource r: this.resources)
+		{
+			for(Resource s: temp_other)
+			{
+				if(r.equals(s))
+				{
+					this.remove(s);
+					
+					// must remove the temp resources otherwise it will subtract until no resources are left in the players deck.
+					temp_other.remove(s);
+				}
+			}
+		}
+		return this;
 	}
 	
 	public String toString()
