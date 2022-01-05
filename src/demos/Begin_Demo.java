@@ -1,6 +1,6 @@
 package demos;
 import game.Table;
-import Viewer.Draw_Board;
+import viewer.Draw_Board;
 
 public class Begin_Demo {
 

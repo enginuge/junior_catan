@@ -1,4 +1,4 @@
-package Viewer;
+package viewer;
 
 import board.Board;
 import board.Island;

@@ -1,4 +1,4 @@
-package Viewer;
+package viewer;
 
 import Player.Player;
 import model.Model;
