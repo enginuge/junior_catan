@@ -3,7 +3,7 @@ package controller;
 import Player.Player;
 import board.Lair;
 import model.Model;
-import Viewer.Viewer;
+import viewer.Viewer;
 
 /* The class responsible for interacting with the viewer
  * and the model.
