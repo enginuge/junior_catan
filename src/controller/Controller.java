@@ -119,12 +119,12 @@ public class Controller
 			{
 				current_player = model.table.players.get(t);
 				
-				for(a="No"; a.equals("No"); )
+				for(a="No"; a.equals("No") || a.equals("no") || a.equals("N") || a.equals("n");)
 				{
 					a = viewer.ask_to_roll(current_player);	
 				}
 				
-				if(a.equals("Yes"))
+				if(a.equals("Yes") || a.equals("yes") || a.equals("Y") || a.equals("y"))
 				{
 					model.table.die.roll();
 					

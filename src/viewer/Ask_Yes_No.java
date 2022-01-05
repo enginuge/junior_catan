@@ -27,7 +27,13 @@ public class Ask_Yes_No implements PlayerInput
 
 		ArrayList<String> options = new ArrayList<String>();
 		options.add("Yes");
+		options.add("yes");
+		options.add("Y");
+		options.add("y");
 		options.add("No");
+		options.add("no");
+		options.add("N");
+		options.add("n");
 		
 		String choice = "";
 		
