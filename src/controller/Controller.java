@@ -113,7 +113,7 @@ public class Controller
 		String action; // the move the player wants to make. 
 		String build_choice;
 		
-		Turn turn;
+		Turn turn = null;
 		
 		Player current_player;
 		
@@ -122,7 +122,7 @@ public class Controller
 			// Check Players Scores.
 			for(Player p: this.model.table.players)
 			{
-				if(p.score >= 7)
+				if(p.get_score() >= 7)
 				{
 					keep_playing = false;
 					
@@ -156,11 +156,15 @@ public class Controller
 					case "Build":
 						build_choice = viewer.ask_to_build(current_player);
 						
-						if(build_choice == "Lair")
+						if(build_choice.equals("Lair")) {
 							turn = new Build_Lair(current_player);
-						
-						else if(build_choice == "Ship")
+							System.out.println("Lair case chosen.");
+						}
+						else if(build_choice.equals("Ship"))
 							turn = new Build_Ship(current_player);
+							
+//						turn.act();
+						this.play_turn(turn);
 						
 						break;
 						
@@ -188,5 +192,11 @@ public class Controller
 		} // Game ends.
 		
 		viewer.game_over();
+	}
+
+	private void play_turn(Turn turn) {
+		// TODO Auto-generated method stub
+		turn.act();
+		
 	}
 } // end of class.

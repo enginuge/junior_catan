@@ -20,14 +20,11 @@ public class Build_Ship extends Build_Turn
 	{
 		Resource_Deck cost = super.set_cost();
 		
-		cost.add(new Cutlass());
-		cost.add(new Molasses());
 		cost.add(new Goat());
 		cost.add(new Wood());
 		
 		return cost;
 	}
-	
 	
 	public static void main(String[] args)
 	{
@@ -41,13 +38,6 @@ public class Build_Ship extends Build_Turn
 	@Override
 	public boolean act()
 	{
-		this.get_player().get_resource_deck().subtract_deck(this.get_cost());
-		
-		// needs to pick laier to build on.
-		// needs to gain 1 score when the lair is built.
-		
 		return false;
 	}
-	
-	
 }

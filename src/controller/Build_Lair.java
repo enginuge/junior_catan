@@ -20,6 +20,8 @@ public class Build_Lair extends Build_Turn
 	{
 		Resource_Deck cost = super.set_cost();
 		
+		cost.add(new Cutlass());
+		cost.add(new Molasses());
 		cost.add(new Goat());
 		cost.add(new Wood());
 		
@@ -34,6 +36,18 @@ public class Build_Lair extends Build_Turn
 		Build_Lair bl = new Build_Lair(p);
 		
 		System.out.println(bl);
+	}
+
+	@Override
+	public boolean act() {
+		this.get_player().get_resource_deck().subtract_deck(this.get_cost());
+		
+		// needs to pick lair to build on.
+
+		// needs to gain 1 score when the lair is built.
+		this.get_player().add_point();
+		
+		return true;
 	}
 	
 }

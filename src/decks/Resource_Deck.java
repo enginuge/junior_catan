@@ -94,15 +94,45 @@ public class Resource_Deck implements Deck
 		if(temp_this.size() < temp_small.size())
 			return false;
 
-		for(Resource r: temp_this)
+//		for(Resource r: temp_this)
+//		{
+//			for(Resource s: temp_small)
+//			{
+//				if(r.equals(s))
+//				{
+//					temp_this.remove(r);
+//					
+//					temp_small.remove(s);
+//				}
+//			}
+//		}
+		int n = temp_this.size();
+
+		int m = temp_small.size();
+		
+		int i, j;
+		
+		Resource r, s;
+		
+		for(i=0; i < n; i++)
 		{
-			for(Resource s: temp_small)
+			m = temp_small.size();
+
+			r = temp_this.get(i);
+			
+			for(j = 0; j < m; j++)
 			{
+				s = temp_small.get(j);
+				
 				if(r.equals(s))
 				{
 					temp_this.remove(r);
 					
+					n = temp_this.size();
+					
 					temp_small.remove(s);
+					
+					m = temp_small.size();
 				}
 			}
 		}
@@ -133,6 +163,7 @@ public class Resource_Deck implements Deck
 				}
 			}
 		}
+		
 		return this;
 	}
 	

@@ -9,7 +9,7 @@ public class Player
 	
 	public Hand hand; // hand with both decks.
 	
-	public int score;
+	private int score;
 	
 	public Player(String name)
 	{
@@ -35,6 +35,11 @@ public class Player
 	public int get_score()
 	{
 		return this.score;
+	}
+	
+	public void add_point()
+	{
+		this.score++;
 	}
 	
 	public String toString()

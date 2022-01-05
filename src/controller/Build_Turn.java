@@ -10,7 +10,7 @@ import cards.Resource;
 import cards.Wood;
 import decks.Resource_Deck;
 
-public class Build_Turn extends Turn
+public abstract class  Build_Turn extends Turn
 {
 	public Build_Turn(Player p)
 	{
