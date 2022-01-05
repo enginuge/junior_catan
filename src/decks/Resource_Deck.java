@@ -82,12 +82,16 @@ public class Resource_Deck implements Deck
 	public boolean cards_in(Resource_Deck smaller_deck)
 	{
 		List<Resource> temp_this = this.list_resources();
+		
 		List<Resource> temp_small = smaller_deck.list_resources();
 		
 		if(temp_this.isEmpty())
 			return false;
 		
 		if(temp_small.isEmpty())
+			return false;
+		
+		if(temp_this.size() < temp_small.size())
 			return false;
 
 		for(Resource r: temp_this)

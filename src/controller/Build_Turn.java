@@ -15,19 +15,11 @@ public class Build_Turn extends Turn
 	public Build_Turn(Player p)
 	{
 		super(p);
+		
+		this.cost = this.set_cost();
 	}
 	
-	public Resource_Deck get_lair_cost()
-	{
-		Resource_Deck cost = new Resource_Deck();
-		
-		cost.add(new Cutlass());
-		cost.add(new Molasses());
-		cost.add(new Goat());
-		cost.add(new Wood());
-		
-		return cost;
-	}
+	protected Resource_Deck cost;
 	
 	public Resource_Deck get_ship_cost()
 	{
@@ -39,11 +31,31 @@ public class Build_Turn extends Turn
 		return cost;
 	}
 	
-	/* Is the player able to afford the build costs? */
-	public boolean check_costs()
+	public Resource_Deck set_cost()
 	{
+		cost = new Resource_Deck();
 		
+		return cost;
+	}
+	
+	public Resource_Deck get_cost()
+	{
+		return this.cost;
+	}
+	
+	/* Is the player able to afford the build costs? */
+	public boolean check_cost()
+	{
+		if(this.get_player().get_resource_deck().cards_in(get_cost()))
+			return true;
 		
 		return false;
+	}
+	
+	public String toString()
+	{
+		String message = String.format("Build Turn.\nCost:\t%s", this.cost);
+		
+		return message; 
 	}
 }

@@ -1,6 +1,7 @@
 package Player;
 
 import decks.Hand;
+import decks.Resource_Deck;
 
 public class Player
 {
@@ -39,5 +40,10 @@ public class Player
 	public String toString()
 	{
 		return String.format("Name: %s", this.name);
+	}
+	
+	public Resource_Deck get_resource_deck()
+	{
+		return this.hand.get_resource_deck();
 	}
 }
