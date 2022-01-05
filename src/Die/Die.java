@@ -54,7 +54,7 @@ public class Die extends Subject
 		for(int i = 0; i < 10000; i++)
 			results[die.roll()] ++;			
 
-		// Results should appear evenly spread and prooves a suitable level of randomness.
+		// Results should appear evenly spread and proves a suitable level of randomness.
 		for(int i = 0; i < 6; i++)
 			System.out.printf("%d: %d\n", i+1, results[i]);
 	}

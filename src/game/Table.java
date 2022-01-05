@@ -81,7 +81,7 @@ public class Table
 			// Ensure the player picks an actual color.
 			for(name=""; !colors.contains(name); )
 			{
-				System.out.printf("Player %d, What Color would you like?\n", i+1);
+				System.out.printf("Player %d, What Color would you like? Colours are case sensitive. \n", i+1);
 				
 				for(String c:colors)
 					System.out.printf("%s ", c);
