@@ -293,6 +293,25 @@ public class Board
 		return new_channels;
 	}
 	
+	public ArrayList<Lair> join_lairs_to_channels(ArrayList<Lair> lairs, ArrayList<Channel> channels)
+	{
+		for(Lair l: lairs)
+		{
+			for(Channel c: channels)
+			{
+				for(Lair l2: c.get_lairs())
+				{
+					if(l.equals(l2))
+					{
+						l.add_channel(c);
+					} // end conditional.
+				} // end lair in channel loop.
+			} // end all channel loop
+		} // end all lairs loop
+		
+		return lairs;
+	}
+	
 	public Lair get_lair_by_id(ArrayList<Lair> lairs, int id)
 	{
 		for(Lair l: lairs)
@@ -465,6 +484,8 @@ public class Board
 		made_lairs = this.create_lairs();
 		
 		this.channels = this.create_channels(made_lairs);
+		
+		made_lairs = this.join_lairs_to_channels(made_lairs, this.channels);
 		
 		this.place_lairs(made_islands, made_lairs);
 		

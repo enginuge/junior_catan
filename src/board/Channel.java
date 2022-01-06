@@ -33,6 +33,11 @@ public class Channel {
 		return this.identity;
 	}
 	
+	public ArrayList<Lair> get_lairs()
+	{
+		return this.lairs;
+	}
+	
 	public void add_lair(Lair lair)
 	{
 		int n = 2;
@@ -63,6 +68,11 @@ public class Channel {
 		
 		// All okay.
 		return 0;
+	}
+	
+	public boolean is_occupied()
+	{
+		return this.occupied;
 	}
 	
 	public boolean equals(Channel other)

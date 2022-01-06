@@ -41,6 +41,11 @@ public class Lair implements Observer
 		return this.identity;
 	}
 	
+	public ArrayList<Channel> get_channels()
+	{
+		return this.channels;
+	}
+	
 	public int set_owner(Player player)
 	{
 		this.occupied = true;
@@ -52,6 +57,11 @@ public class Lair implements Observer
 		return 0;
 	}
 	
+	public boolean is_occupied()
+	{
+		return this.occupied;
+	}
+	
 	public Channel add_neighbour(Lair neighbour)
 	{
 		Channel new_channel = new Channel(0);
@@ -61,6 +71,11 @@ public class Lair implements Observer
 //		this.channels.add(new_channel);
 		
 		return new_channel;
+	}
+	
+	public void add_channel(Channel c)
+	{
+		this.channels.add(c);
 	}
 
 	/*
