@@ -22,6 +22,11 @@ public class Hand
 		this.resource_deck.add(o);
 	}
 	
+	public void remove_resource(Object o)
+	{
+		this.resource_deck.remove(o);
+	}
+	
 	public String resource_string()
 	{
 		return this.resource_deck.toString();

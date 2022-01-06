@@ -59,7 +59,26 @@ public class Viewer
 		return message;
 	}
 	
-	public String ask_to_trade(Player player)
+	//HERE I want to show the Stockpile.
+	//Treat the stockpile basically like a player,
+	//and make sure that players are receiving their
+	//cards only from the stockpile
+	//maybe the viewer (or another class) can CHECK (forever)
+	//the state of the stockpile and if it turns to 0 all
+	//stock must be returned
+	
+	/*public String show_stock(Stockpile s)
+	{
+		String message;
+		
+		message = String.format("\n=====\n----\nResources available in the Stockpile:\t\n%s\n=====", s.hand.resource_string());
+		
+		System.out.println(message);
+		
+		return message;
+	}*/
+	
+	/* public String ask_to_trade(Player player)
 	{
 		Ask_Yes_No ask = new Ask_Yes_No(player);
 		
@@ -67,7 +86,7 @@ public class Viewer
 		
 		return ask.get_input();
 		
-	}
+	} */
 	
 	public String game_over()
 	{

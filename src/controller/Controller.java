@@ -131,6 +131,7 @@ public class Controller
 					viewer.display_roll();
 					
 					//******* ADD TRADING FUNCTIONALITIES HERE *******************
+					
 				}
 				
 				viewer.show_inventory(current_player);

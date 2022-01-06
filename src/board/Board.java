@@ -23,7 +23,7 @@ public class Board
 
 	private int player_count = 0;
 	
-	private int maxResourceCount = 18;
+	private int maxResourceCount = 3;
 			
 	public Coco_Deck coco_deck; // Deck to hold the coco_tiles.
 	
@@ -129,6 +129,7 @@ public class Board
 			stock.add_stock(cutlass);
 			stock.add_stock(goat);
 		}
+		//System.out.println("Stockpile is: %s \n");
 		return stock;
 	}
 	
