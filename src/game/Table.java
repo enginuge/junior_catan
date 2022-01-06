@@ -50,7 +50,7 @@ public class Table
 	/*
 	 * Method to Scan the amount of players.
 	 * And ask each player which color they want.
-	 * Colors are case sensitive and disapear once selected.
+	 * Colors are case sensitive and disappear once selected.
 	 */
 	public ArrayList<Player> create_players()
 	{

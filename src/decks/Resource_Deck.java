@@ -8,6 +8,7 @@ import cards.Cutlass;
 import cards.Goat;
 import cards.Gold;
 import cards.Molasses;
+import cards.Wood;
 import cards.Resource;
 
 public class Resource_Deck implements Deck
@@ -96,7 +97,7 @@ public class Resource_Deck implements Deck
 		deck.add(new Gold());
 		deck.add(new Goat());
 		deck.add(new Molasses());
-		deck.add(new Cutlass());
+		deck.add(new Wood());
 		
 		System.out.println(deck);
 		

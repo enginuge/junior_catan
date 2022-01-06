@@ -3,7 +3,7 @@
   <help_text>// Uncomment the following line to change the fontsize and font:
 fontsize=12
 
-// fontfamily=SansSerif //possible: SansSerif,Serif,Monospaced
+ fontfamily=Serif //possible: SansSerif,Serif,Monospaced
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////

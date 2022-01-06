@@ -59,6 +59,16 @@ public class Viewer
 		return message;
 	}
 	
+	public String ask_to_trade(Player player)
+	{
+		Ask_Yes_No ask = new Ask_Yes_No(player);
+		
+		System.out.printf("Would you like to Trade?\n");
+		
+		return ask.get_input();
+		
+	}
+	
 	public String game_over()
 	{
 		String message = String.format("Player %s Wins the Game!\n", Model.getInstance().get_winner());

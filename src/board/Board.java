@@ -16,13 +16,18 @@ import cards.Molasses;
 import cards.Resource;
 import cards.Wood;
 import decks.Coco_Deck;
+import decks.Stockpile;
 
 public class Board
 {
 
 	private int player_count = 0;
+	
+	private int maxResourceCount = 18;
 			
 	public Coco_Deck coco_deck; // Deck to hold the coco_tiles.
+	
+	public Stockpile stock_deck; // A deck for the board's stockpile
 	
 	public ArrayList<Island> islands = new ArrayList<Island>(); 
 
@@ -52,6 +57,8 @@ public class Board
 		this.coco_deck = this.setup_coco_tiles();
 
 		this.islands = this.setup_islands();
+		
+		this.stock_deck = this.setup_stockpile();
 	}
 	
 	private Coco_Deck setup_coco_tiles()
@@ -97,6 +104,32 @@ public class Board
 		deck.shuffle();
 		
 		return deck;
+	}
+	
+	private Stockpile setup_stockpile()
+	{
+		System.out.println("Setting up Stockpile...");
+		
+		int i = 0;
+		
+		Stockpile stock = new Stockpile();
+		
+		Resource gold = new Gold();
+		Resource molasses = new Molasses();
+		Resource wood = new Wood();
+		Resource cutlass = new Cutlass();
+		Resource goat = new Goat();
+		
+		// Add the ghost pirate tiles.
+		for(i = 0; i < maxResourceCount; i++)
+		{
+			stock.add_stock(gold);
+			stock.add_stock(molasses);
+			stock.add_stock(wood);
+			stock.add_stock(cutlass);
+			stock.add_stock(goat);
+		}
+		return stock;
 	}
 	
 	/* Create Islands A to M.
