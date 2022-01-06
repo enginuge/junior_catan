@@ -30,6 +30,8 @@ public class Board
 
 	public ArrayList<Channel> channels = new ArrayList<Channel>();
 	
+	public Occupied_Land occupied = new Occupied_Land();
+	
 	private static Board uniqueInstance = null;
 
 	public static Board getInstance()
@@ -497,6 +499,34 @@ public class Board
 			}
 		}
 	}
+	
+	public void get_owned()
+	{
+//		ArrayList<Lair> owned_lairs = new ArrayList<Lair>();
+//		
+//		ArrayList<Channel> owned_channels = new ArrayList<Channel>();
+		
+		for(Island i: this.islands)
+		{
+			for(Lair l: i.lairs)
+			{
+				if(l.occupied)
+					this.occupied.add_lair(l);
+			}
+		}
+		
+		// Owned channels will only be connected to owned lairs.
+		for(Channel c: this.channels)
+		{
+			for(Lair l: this.occupied.get_lairs())
+			{
+				if(c.connects_to(l))
+					this.occupied.add_channel(c);
+			}	
+		}
+		
+	}
+	
 	public String toString()
 	{
 		String output;

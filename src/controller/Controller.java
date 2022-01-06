@@ -194,9 +194,24 @@ public class Controller
 		viewer.game_over();
 	}
 
-	private void play_turn(Turn turn) {
-		// TODO Auto-generated method stub
+	private void play_turn(Turn turn) 
+	{
 		turn.act();
+	}
+	
+	/* Where is the player allowed to build.
+	 * Where they have neighboring areas and not already occupied.
+	 * */
+	public void available_to_build(Player p)
+	{
+		Model.getInstance();
 		
+		switch(p.get_name())
+		{
+			case "Orange":
+				
+				
+				break;
+		}
 	}
 } // end of class.

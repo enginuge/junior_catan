@@ -82,6 +82,19 @@ public class Channel {
 		return false;
 	}
 	
+	public boolean connects_to(Lair l)
+	{
+		int n=2, i=0;
+		
+		for(i=0; i<n; i++)
+		{
+			if(this.lairs.equals(l))
+				return true;
+		}
+		
+		return false;
+	}
+	
 	public String toString()
 	{
 		return String.format("%s to %s", this.lairs.get(0), this.lairs.get(1));
