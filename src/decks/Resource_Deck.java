@@ -150,16 +150,46 @@ public class Resource_Deck implements Deck
 		
 		List<Resource> temp_other = other.list_resources();
 
-		for(Resource r: this.resources)
+//		for(Resource r: this.resources)
+//		{
+//			for(Resource s: temp_other)
+//			{
+//				if(r.equals(s))
+//				{
+//					this.remove(s);
+//					
+//					// must remove the temp resources otherwise it will subtract until no resources are left in the players deck.
+//					temp_other.remove(s);
+//				}
+//			}
+//		}
+		int n = this.resources.size();
+
+		int m = temp_other.size();
+		
+		int i, j;
+		
+		Resource r, s;
+		
+		for(i=0; i < n; i++)
 		{
-			for(Resource s: temp_other)
+			m = temp_other.size();
+
+			r = this.resources.get(i);
+			
+			for(j = 0; j < m; j++)
 			{
+				s = temp_other.get(j);
+				
 				if(r.equals(s))
 				{
-					this.remove(s);
+					this.resources.remove(r);
 					
-					// must remove the temp resources otherwise it will subtract until no resources are left in the players deck.
+					n = this.resources.size();
+					
 					temp_other.remove(s);
+					
+					m = temp_other.size();
 				}
 			}
 		}
