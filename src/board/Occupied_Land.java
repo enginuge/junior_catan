@@ -70,4 +70,14 @@ public class Occupied_Land
 		return free;
 	}
 	
+	public String toString()
+	{
+		String message;
+		
+		message = String.format("Lairs:\t%s\nChannels:\t%s", this.lairs, this.channels);
+		
+		return message;
+	}
+	
+	
 }

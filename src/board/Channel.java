@@ -66,6 +66,8 @@ public class Channel {
 		
 		this.owner = player;
 		
+		player.add_channel(this);
+
 		// All okay.
 		return 0;
 	}

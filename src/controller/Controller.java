@@ -188,6 +188,8 @@ public class Controller
 				// Either stop by knowing the player can do no more.
 				// Or ask them to end their turn.
 				
+				viewer.show_occupied(current_player);
+				
 			}
 		} // Game ends.
 		

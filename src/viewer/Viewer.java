@@ -72,6 +72,17 @@ public class Viewer
 		return message;
 	}
 	
+	public String show_occupied(Player p)
+	{
+		String message;
+		
+		message = String.format("=====\n%s\n----\nScore:\t%d\n%s\n=====", p.get_name(), p.get_score(), p.occupied_string());
+		
+		System.out.println(message);
+		
+		return message;
+	}
+	
 	public String game_over()
 	{
 		String message = String.format("Player %s Wins the Game!\n", Model.getInstance().get_winner());

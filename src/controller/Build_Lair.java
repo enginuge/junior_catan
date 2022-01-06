@@ -45,7 +45,7 @@ public class Build_Lair extends Build_Turn
 		// needs to pick lair to build on.
 
 		// needs to gain 1 score when the lair is built.
-		this.get_player().add_point();
+//		this.get_player().add_point();
 		
 		return true;
 	}

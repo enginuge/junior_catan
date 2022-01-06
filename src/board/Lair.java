@@ -53,6 +53,8 @@ public class Lair implements Observer
 		// Check Player has a connected lair in the neighbours list.
 		this.owner = player;
 		
+		player.add_lair(this);
+		
 		// all okay.
 		return 0;
 	}
