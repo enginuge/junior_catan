@@ -5,7 +5,7 @@
     <id>UMLHierarchy</id>
     <coordinates>
       <x>260</x>
-      <y>90</y>
+      <y>40</y>
       <w>200</w>
       <h>330</h>
     </coordinates>
@@ -21,7 +21,7 @@ Board
     <id>UMLUseCase</id>
     <coordinates>
       <x>60</x>
-      <y>150</y>
+      <y>100</y>
       <w>120</w>
       <h>40</h>
     </coordinates>
@@ -32,7 +32,7 @@ Board
     <id>UMLUseCase</id>
     <coordinates>
       <x>470</x>
-      <y>150</y>
+      <y>100</y>
       <w>120</w>
       <h>40</h>
     </coordinates>
@@ -43,7 +43,7 @@ Board
     <id>Relation</id>
     <coordinates>
       <x>450</x>
-      <y>180</y>
+      <y>130</y>
       <w>90</w>
       <h>70</h>
     </coordinates>
@@ -54,7 +54,7 @@ Board
     <id>Relation</id>
     <coordinates>
       <x>340</x>
-      <y>120</y>
+      <y>70</y>
       <w>210</w>
       <h>50</h>
     </coordinates>
@@ -65,7 +65,7 @@ Board
     <id>Relation</id>
     <coordinates>
       <x>110</x>
-      <y>110</y>
+      <y>60</y>
       <w>170</w>
       <h>60</h>
     </coordinates>
@@ -76,7 +76,7 @@ Board
     <id>Relation</id>
     <coordinates>
       <x>120</x>
-      <y>180</y>
+      <y>130</y>
       <w>180</w>
       <h>80</h>
     </coordinates>
