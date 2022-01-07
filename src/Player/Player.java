@@ -2,7 +2,6 @@ package Player;
 
 import decks.Hand;
 import decks.BoardStock;
-//import board.Board;
 
 public class Player
 {
@@ -12,8 +11,6 @@ public class Player
 	
 	public int score;
 	
-	public BoardStock bStck;
-	
 	public Player(String name)
 	{
 		this.name = name;
@@ -21,8 +18,6 @@ public class Player
 		this.hand = new Hand();
 		
 		this.score = 0;
-		
-		//this.stock_deck = new Stockpile();
 	}
 	
 	public void collect_resource(Object o)
@@ -33,12 +28,11 @@ public class Player
 
 		// MODIFY THIS TO TAKE FROM STOCKPILE ONLY *******************
 		//Treat stockpile like another hand??
-		//this.stock_deck.remove_card(o);
+		//this.stock_deck.remove_stock(o);
 		
 		//convert the object to a string, then compare strings
 		//if the number of the resource drops to zero, then restock.
 		
-
 		//****************************
 		// Stockpile will be exactly like a Player,
 		// implementing a hand.

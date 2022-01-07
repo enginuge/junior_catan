@@ -3,6 +3,7 @@ package viewer;
 import board.Board;
 import board.Island;
 import board.Lair;
+import decks.BoardStock;
 
 public class Draw_Board
 {
@@ -15,6 +16,12 @@ public class Draw_Board
 		{
 			draw_island(i);
 		}
+	}
+	
+	public void draw_available_stock()
+	{
+		BoardStock stock = BoardStock.getInstance();
+		System.out.println(stock);
 	}
 	
 	public void draw_island(Island island)

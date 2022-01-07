@@ -4,6 +4,7 @@ import Player.Player;
 import board.Lair;
 import model.Model;
 import viewer.Viewer;
+import decks.BoardStock;
 
 /* The class responsible for interacting with the viewer
  * and the model.
@@ -32,6 +33,8 @@ public class Controller
 	Model model = Model.getInstance();
 	
 	Viewer viewer = Viewer.getInstance();
+	
+	BoardStock stock = BoardStock.getInstance();
 	
 	public void setup_game()
 	{
@@ -135,6 +138,8 @@ public class Controller
 				}
 				
 				viewer.show_inventory(current_player);
+				
+				//viewer.show_stock(stock);
 				
 			}
 		} // Game ends.

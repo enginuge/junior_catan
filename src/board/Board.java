@@ -27,7 +27,7 @@ public class Board
 			
 	public Coco_Deck coco_deck; // Deck to hold the coco_tiles.
 	
-	public BoardStock stock_deck; // A deck for the board's stockpile
+	public BoardStock stock_deck;
 	
 	public ArrayList<Island> islands = new ArrayList<Island>(); 
 
@@ -120,6 +120,7 @@ public class Board
 		Resource molasses = new Molasses();
 		*/
 		
+		/*
 		for (int i = 0; i<maxResourceCount; i++)
 		{
 			stock.add_stock(new Wood());
@@ -128,7 +129,7 @@ public class Board
 			stock.add_stock(new Cutlass());
 			stock.add_stock(new Gold());
 			System.out.println("One round of Stock Added");
-		}
+		}*/
 		
 		//System.out.println("Stockpile is: %s \n");
 		return stock;

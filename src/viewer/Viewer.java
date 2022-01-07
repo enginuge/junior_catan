@@ -2,7 +2,7 @@ package viewer;
 
 import Player.Player;
 import model.Model;
-
+import decks.BoardStock;
 /*
  * The class responsible for showing and asking the
  * Player for inputs.
@@ -67,16 +67,16 @@ public class Viewer
 	//the state of the stockpile and if it turns to 0 all
 	//stock must be returned
 	
-	/*public String show_stock(Stockpile s)
+	public String show_stock(BoardStock s)
 	{
 		String message;
 		
-		message = String.format("\n=====\n----\nResources available in the Stockpile:\t\n%s\n=====", s.hand.resource_string());
+		message = String.format("\n=====\n----\nResources available in the Stockpile:\t\n%s\n=====", s.resource_string());
 		
 		System.out.println(message);
 		
 		return message;
-	}*/
+	}
 	
 	/* public String ask_to_trade(Player player)
 	{

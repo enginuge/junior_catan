@@ -61,9 +61,14 @@ public class Lair implements Observer
 	{
 		if(this.occupied)
 		{
-			this.owner.collect_resource(o); //stock update WAS here
+			this.owner.collect_resource(o); 
+			this.stock_deck.remove_stock(o);
+			/*if(this.stock_deck.refresh_stock())
+			{
+				this.owner.lose_all(o);
+				this.stock_deck.restock(o);
+			}*/
 		}
-		
 	}
 
 	@Override

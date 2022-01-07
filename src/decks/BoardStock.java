@@ -23,6 +23,16 @@ public class BoardStock{
 	//public Stack<Cutlass> cutlass_card;
 	//public Stack<Goat> goat_card;
 	
+	public static BoardStock uniqueInstance = null; // A deck for the board's stockpile
+	
+	public static BoardStock getInstance()
+	{
+		if(uniqueInstance == null)
+			uniqueInstance = new BoardStock();
+		
+		return uniqueInstance;
+	}
+	
 	private int maxResourceCount = 5;
 	
 	private Resource_Deck stockpile;
@@ -31,6 +41,15 @@ public class BoardStock{
 	public BoardStock()
 	{
 		this.stockpile = new Resource_Deck();
+		for (int i = 0; i<maxResourceCount; i++)
+		{
+			stockpile.add(new Wood());
+			stockpile.add(new Goat());
+			stockpile.add(new Molasses());
+			stockpile.add(new Cutlass());
+			stockpile.add(new Gold());
+			System.out.println("One round of Stock Added");
+		}
 	}
 	
 	/* Add a resource card to the stock pile */
