@@ -27,6 +27,11 @@ public class Hand
 		this.resource_deck.remove(o);
 	}
 	
+	public void remove_all_of_type(Object o)
+	{
+		this.resource_deck.remove_all(o);
+	}
+	
 	public String resource_string()
 	{
 		return this.resource_deck.toString();

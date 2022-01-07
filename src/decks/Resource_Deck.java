@@ -47,6 +47,26 @@ public class Resource_Deck implements Deck
 		
 		return false; // Did not remove.
 	}
+	
+	public void remove_all(Object o)
+	{
+		///get size of resource deck
+		int totalcards = resources.size();
+		
+		//o is the resource we are removing from the hand
+		Resource to_remove = (Resource)o;
+		
+		//cycle through entire list
+		// if object i == object o, remove.
+		
+		for(int i=0; i < totalcards; i++)
+		{
+			if(resources.get(i) == to_remove)
+			{
+				resources.remove(i);
+			}
+		}
+	}
 
 	@Override
 	public void shuffle() 

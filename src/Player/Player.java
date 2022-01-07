@@ -29,8 +29,10 @@ public class Player
 	{
 		System.out.printf("%s has collected %s.\n", this.name, o);
 		
-		this.hand.add_resource(o);  // MODIFY THIS TO TAKE FROM STOCKPILE ONLY
-		//this.stock_deck.remove_stock(o);
+		this.hand.add_resource(o);  
+		// MODIFY THIS TO TAKE FROM STOCKPILE ONLY *******************
+		//Treat stockpile like another hand??
+		//this.stock_deck.remove_card(o);
 	}
 	
 	// this is the two to one trading system for Stockpile
@@ -41,9 +43,14 @@ public class Player
 		this.hand.remove_resource(a);
 	}
 	
-	public void remove_all_of_type(Object o)
+	public void lose_all(Object o)
 	{
-		//TODO: Sort through the list in the players hand and remove every occurence of o
+		//TODO: Sort through the list in the players hand and remove every occurrence of o
+		// print to user
+		System.out.printf("All cards of type %s have been returned to the Stockpile.\n", o);
+		// use method in Hand
+		this.hand.remove_all_of_type(o);
+		
 	}
 	
 	public String get_name()
