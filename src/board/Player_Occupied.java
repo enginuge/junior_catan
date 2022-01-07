@@ -9,9 +9,9 @@ public class Player_Occupied extends Occupied_Land
 		super();
 	}
 	
-	@Override
-	public get_occupied()
-	{
-		
-	}
+//	@Override
+//	public get_occupied()
+//	{
+//		
+//	}
 }

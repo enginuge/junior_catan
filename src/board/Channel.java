@@ -44,7 +44,7 @@ public class Channel {
 		
 		for(int i=0; i<n; i++)
 		{
-			if(this.lairs.get(i)==new Lair(0)) // the lair in the channel is 0 and unused,
+			if(this.lairs.get(i).equals(new Lair(0) ) ) // the lair in the channel is 0 and unused,
 			{
 				this.lairs.set(i, lair);
 				
@@ -58,6 +58,11 @@ public class Channel {
 		this.add_lair(l1);
 		
 		this.add_lair(l2);
+	}
+	
+	public Player get_owner()
+	{
+		return this.owner;
 	}
 	
 	public int set_owner(Player player)
@@ -109,7 +114,7 @@ public class Channel {
 	
 	public String toString()
 	{
-		return String.format("%s to %s", this.lairs.get(0), this.lairs.get(1));
+		return String.format("%s to %s, owner: %s", this.lairs.get(0).get_id(), this.lairs.get(1).get_id(), this.get_owner());
 	}
 	
 	
