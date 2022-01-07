@@ -1,6 +1,9 @@
 package viewer;
 
+import java.util.ArrayList;
+
 import Player.Player;
+import board.Lair;
 import model.Model;
 
 /*
@@ -81,6 +84,41 @@ public class Viewer
 		System.out.println(message);
 		
 		return message;
+	}
+	
+	public String show_available_lairs(Player p)
+	{
+		String message="";
+		
+		for(Lair l: p.get_free_lair())
+		{
+			message += l.toString() + "\n";
+		}
+		
+		message = String.format("Available Lairs to build for %s:\n%s", p.get_name(), message);
+		
+		System.out.println(message);
+		
+		return message;
+	}
+	
+	public Lair ask_for_lair(Player p,  ArrayList<Lair> lairs)
+	{
+		Lair chosen;
+		
+		String answer;
+
+		int lair_id;
+		
+		Ask_For_Lair ask = new Ask_For_Lair(p, lairs);
+		
+		answer = ask.get_input();
+		
+		lair_id = Integer.valueOf(answer);
+		
+		chosen = Model.getInstance().table.board.get_lair_by_id(lairs, lair_id);
+		
+		return chosen;
 	}
 	
 	public String game_over()

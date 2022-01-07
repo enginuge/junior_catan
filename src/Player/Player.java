@@ -1,5 +1,7 @@
 package Player;
 
+import java.util.ArrayList;
+
 import board.Channel;
 import board.Lair;
 import board.Occupied_Land;
@@ -53,7 +55,7 @@ public class Player
 	
 	public String toString()
 	{
-		return String.format("Name: %s", this.name);
+		return String.format("%s", this.name);
 	}
 	
 	public Resource_Deck get_resource_deck()
@@ -78,5 +80,10 @@ public class Player
 		message = String.format("%s", this.occupied);
 		
 		return message;
+	}
+	
+	public ArrayList<Lair> get_free_lair()
+	{
+		return this.occupied.get_free_lairs();
 	}
 }
