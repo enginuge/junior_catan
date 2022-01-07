@@ -1,7 +1,7 @@
 package Player;
 
 import decks.Hand;
-//import decks.Stockpile;
+import decks.BoardStock;
 //import board.Board;
 
 public class Player
@@ -12,7 +12,7 @@ public class Player
 	
 	public int score;
 	
-	//public Stockpile stock_deck;
+	public BoardStock bStck;
 	
 	public Player(String name)
 	{
@@ -30,9 +30,25 @@ public class Player
 		System.out.printf("%s has collected %s.\n", this.name, o);
 		
 		this.hand.add_resource(o);  
+
 		// MODIFY THIS TO TAKE FROM STOCKPILE ONLY *******************
 		//Treat stockpile like another hand??
 		//this.stock_deck.remove_card(o);
+		
+		//convert the object to a string, then compare strings
+		//if the number of the resource drops to zero, then restock.
+		
+
+		//****************************
+		// Stockpile will be exactly like a Player,
+		// implementing a hand.
+		//****************************
+		
+		
+		//this.stock.remove_card(o);
+		//this.stock.refresh_stock();
+		// STOCKPILE = remove resource
+		// stockpile refresh (will only do so if 0 anyways)
 	}
 	
 	// this is the two to one trading system for Stockpile
@@ -50,7 +66,6 @@ public class Player
 		System.out.printf("All cards of type %s have been returned to the Stockpile.\n", o);
 		// use method in Hand
 		this.hand.remove_all_of_type(o);
-		
 	}
 	
 	public String get_name()

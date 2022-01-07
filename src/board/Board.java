@@ -16,18 +16,18 @@ import cards.Molasses;
 import cards.Resource;
 import cards.Wood;
 import decks.Coco_Deck;
-import decks.Stockpile;
+import decks.BoardStock;
 
 public class Board
 {
 
 	private int player_count = 0;
 	
-	private int maxResourceCount = 3;
+	private int maxResourceCount = 5;
 			
 	public Coco_Deck coco_deck; // Deck to hold the coco_tiles.
 	
-	public Stockpile stock_deck; // A deck for the board's stockpile
+	public BoardStock stock_deck; // A deck for the board's stockpile
 	
 	public ArrayList<Island> islands = new ArrayList<Island>(); 
 
@@ -58,7 +58,7 @@ public class Board
 
 		this.islands = this.setup_islands();
 		
-		this.stock_deck = this.setup_stockpile();
+		this.stock_deck = this.setup_boardstock();
 	}
 	
 	private Coco_Deck setup_coco_tiles()
@@ -106,29 +106,30 @@ public class Board
 		return deck;
 	}
 	
-	private Stockpile setup_stockpile()
+	private BoardStock setup_boardstock()
 	{
-		System.out.println("Setting up Stockpile...");
+		System.out.println("Setting up Board's Stockpile...");
 		
-		int i = 0;
+		BoardStock stock = new BoardStock();
 		
-		Stockpile stock = new Stockpile();
-		
-		Resource gold = new Gold();
-		Resource molasses = new Molasses();
+		/*
 		Resource wood = new Wood();
 		Resource cutlass = new Cutlass();
+		Resource gold = new Gold();
 		Resource goat = new Goat();
+		Resource molasses = new Molasses();
+		*/
 		
-		// Add the ghost pirate tiles.
-		for(i = 0; i < maxResourceCount; i++)
+		for (int i = 0; i<maxResourceCount; i++)
 		{
-			stock.add_stock(gold);
-			stock.add_stock(molasses);
-			stock.add_stock(wood);
-			stock.add_stock(cutlass);
-			stock.add_stock(goat);
+			stock.add_stock(new Wood());
+			stock.add_stock(new Goat());
+			stock.add_stock(new Molasses());
+			stock.add_stock(new Cutlass());
+			stock.add_stock(new Gold());
+			System.out.println("One round of Stock Added");
 		}
+		
 		//System.out.println("Stockpile is: %s \n");
 		return stock;
 	}

@@ -73,6 +73,13 @@ public class Resource_Deck implements Deck
 	{
 		Collections.shuffle(resources);
 	}
+	
+	public int size()
+	{
+		int s = resources.size();
+		return s;
+	}
+
 
 	@Override
 	public void sort()

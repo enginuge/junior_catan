@@ -17,7 +17,7 @@ public abstract class Resource
 	public abstract Resource give();
 	
 	/* Method for the resource to be collected by a player or market.
-	 * Could be unnescesary.
+	 * Could be unnecessary.
 	 */
 	public abstract void receive();
 	
