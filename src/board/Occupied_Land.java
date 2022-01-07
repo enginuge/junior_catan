@@ -17,6 +17,15 @@ public class Occupied_Land
 	
 	public ArrayList<Lair> add_lair(Lair l)
 	{
+		// If the Lair is already in the list of occupied land.
+		// return before adding it again.
+		// Helped resolve duplicate lairs being added.
+		for(Lair in: this.get_lairs())
+		{
+			if(l.equals(in))
+				return this.get_lairs();
+		}
+		
 		this.lairs.add(l);
 		
 		return this.lairs;
