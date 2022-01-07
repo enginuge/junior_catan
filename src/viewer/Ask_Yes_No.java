@@ -12,6 +12,6 @@ public class Ask_Yes_No extends Get_Input
 		
 		this.add_option("No");
 		
-		this.set_prompt("Player "+this.player_name()+": Yes or No?\n");
+		this.set_prompt("Player "+this.player_name()+":\n");
 	}
 }

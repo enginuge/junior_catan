@@ -49,22 +49,29 @@ public class Build_Lair extends Build_Turn
 	@Override
 	public boolean act() {
 		// Check the resources are in the players hand.
-		if(this.get_player().get_resource_deck().cards_in(this.get_cost()))
+//		if(this.get_player().get_resource_deck().cards_in(this.get_cost()))
+		if(super.check_cost())
 		{
 			// needs to pick lair to build on.
 			Viewer.getInstance().show_available_lairs(this.get_player());
 			
-			Lair build_on = Viewer.getInstance().ask_for_lair(this.get_player(), this.get_free_lair());
+			if(this.get_free_lair().size() > 0)
+			{
+				Lair build_on = Viewer.getInstance().ask_for_lair(this.get_player(), this.get_free_lair());
+				
+				Model.getInstance().table.board.set_lair_owner(build_on.get_id(), get_player());
+				
+				this.get_player().get_resource_deck().subtract_deck(this.get_cost());
+				
+		
+				// needs to gain 1 score when the lair is built.
+		//		this.get_player().add_point();
+				
+				return true;
+			}
 			
-			Model.getInstance().table.board.set_lair_owner(build_on.get_id(), get_player());
-			
-			this.get_player().get_resource_deck().subtract_deck(this.get_cost());
-			
-	
-			// needs to gain 1 score when the lair is built.
-	//		this.get_player().add_point();
-			
-			return true;
+			else
+				System.out.println("No free lairs to build on.");
 		}		
 		
 		return false;

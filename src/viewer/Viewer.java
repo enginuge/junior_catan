@@ -3,6 +3,7 @@ package viewer;
 import java.util.ArrayList;
 
 import Player.Player;
+import board.Channel;
 import board.Lair;
 import model.Model;
 
@@ -117,6 +118,25 @@ public class Viewer
 		lair_id = Integer.valueOf(answer);
 		
 		chosen = Model.getInstance().table.board.get_lair_by_id(lairs, lair_id);
+		
+		return chosen;
+	}
+	
+	public Channel ask_for_channel(Player p,  ArrayList<Channel> channels)
+	{
+		Channel chosen;
+		
+		String answer;
+
+		int id;
+		
+		Ask_For_Channel ask = new Ask_For_Channel(p, channels);
+		
+		answer = ask.get_input();
+		
+		id = Integer.valueOf(answer);
+		
+		chosen = Model.getInstance().table.board.get_channel_by_id(id);
 		
 		return chosen;
 	}

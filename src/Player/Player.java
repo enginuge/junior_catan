@@ -86,4 +86,9 @@ public class Player
 	{
 		return this.occupied.get_free_lairs();
 	}
+	
+	public ArrayList<Channel> get_free_channel()
+	{
+		return this.occupied.get_free_channels();
+	}
 }

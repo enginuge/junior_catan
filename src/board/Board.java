@@ -323,6 +323,17 @@ public class Board
 		return new Lair(0);
 	}
 	
+	public Channel get_channel_by_id(int id)
+	{
+		for(Channel c: this.channels)
+		{
+			if(c.get_id()==id)
+				return c;
+		}
+		
+		return new Channel(0);
+	}
+	
 	/* Use on the full list of lairs. */
 //	public ArrayList<Lair> connect_lairs(ArrayList<Lair> lairs)
 //	{

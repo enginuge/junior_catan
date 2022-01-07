@@ -21,15 +21,15 @@ public abstract class  Build_Turn extends Turn
 	
 	protected Resource_Deck cost;
 	
-	public Resource_Deck get_ship_cost()
-	{
-		Resource_Deck cost = new Resource_Deck();
-
-		cost.add(new Goat());
-		cost.add(new Wood());
-		
-		return cost;
-	}
+//	public Resource_Deck get_ship_cost()
+//	{
+//		Resource_Deck cost = new Resource_Deck();
+//
+//		cost.add(new Goat());
+//		cost.add(new Wood());
+//		
+//		return cost;
+//	}
 	
 	public Resource_Deck set_cost()
 	{

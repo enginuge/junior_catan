@@ -86,26 +86,23 @@ public class Resource_Deck implements Deck
 		List<Resource> temp_small = smaller_deck.list_resources();
 		
 		if(temp_this.isEmpty())
+		{
+			System.out.println("This resources empty.");
 			return false;
+		}
 		
 		if(temp_small.isEmpty())
+		{
+			System.out.println("small resources empty.");
 			return false;
+		}		
 		
 		if(temp_this.size() < temp_small.size())
+		{
+			System.out.println("This smaller than small.");
 			return false;
+		}
 
-//		for(Resource r: temp_this)
-//		{
-//			for(Resource s: temp_small)
-//			{
-//				if(r.equals(s))
-//				{
-//					temp_this.remove(r);
-//					
-//					temp_small.remove(s);
-//				}
-//			}
-//		}
 		int n = temp_this.size();
 
 		int m = temp_small.size();
@@ -116,6 +113,9 @@ public class Resource_Deck implements Deck
 		
 		for(i=0; i < n; i++)
 		{
+			// Debug.
+//			System.out.println(temp_this);
+//			System.out.println(temp_small);
 			m = temp_small.size();
 
 			r = temp_this.get(i);
@@ -133,13 +133,19 @@ public class Resource_Deck implements Deck
 					temp_small.remove(s);
 					
 					m = temp_small.size();
+					
+					i = 0;
+					j = 0;
 				}
 			}
 		}
 		
-		if(!temp_small.isEmpty())
+		// If the smaller temporary deck is empty then
+		// All the cards were found in the bigger deck.
+		if(temp_small.size() == 0)
 			return true;
 		
+		System.out.println("Small is not empty after check.");
 		return false;
 	}
 	
