@@ -114,8 +114,9 @@ public class Resource_Deck implements Deck
 		for(i=0; i < n; i++)
 		{
 			// Debug.
-			System.out.println(temp_this);
-			System.out.println(temp_small);
+//			System.out.println(temp_this);
+//			System.out.println(temp_small);
+			
 			m = temp_small.size();
 
 			r = temp_this.get(i);

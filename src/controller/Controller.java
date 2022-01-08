@@ -113,6 +113,8 @@ public class Controller
 		String action; // the move the player wants to make. 
 		String build_choice;
 		
+		boolean turn_ended = false;
+		
 		Turn turn = null;
 		
 		Player current_player;
@@ -146,50 +148,54 @@ public class Controller
 					viewer.display_roll();
 				}
 				
-				viewer.show_inventory(current_player);
 				
-				// Ask for the next move.
-				action = viewer.ask_for_action(current_player);
-				
-				switch(action)
+				// Want to make more than one action per turn.
+				for(turn_ended=false; !turn_ended; )
 				{
-					case "Build":
-						build_choice = viewer.ask_to_build(current_player);
-						
-						if(build_choice.equals("Lair")) {
-							turn = new Build_Lair(current_player);
-							System.out.println("Lair case chosen.");
-						}
-						else if(build_choice.equals("Ship"))
-							turn = new Build_Ship(current_player);
+					viewer.show_inventory(current_player);
+					
+					// Ask for the next move.
+					action = viewer.ask_for_action(current_player);
+					
+					switch(action)
+					{
+						case "Build":
+							build_choice = viewer.ask_to_build(current_player);
 							
-//						turn.act();
-						this.play_turn(turn);
-						
-						break;
-						
-					case "Trade":
-						
-						break;
-						
-					case "Finish":
-						
-						break;
-						
-					default:
-						break;
+							if(build_choice.equals("Lair")) {
+								turn = new Build_Lair(current_player);
+								System.out.println("Lair case chosen.");
+							}
+							else if(build_choice.equals("Ship"))
+								turn = new Build_Ship(current_player);
+								
+	//						turn.act();
+							this.play_turn(turn);
+							
+							break;
+							
+						case "Trade":
+							
+							break;
+							
+						case "Finish":
+							turn_ended = true;
+							break;
+							
+						default:
+							break;
+					}
+					// Do the next move.
+					
+					// Possibly followed by another move after trading
+				
+					// Trade and then build or build and then trade.
+					// Or many times in no order.
+					// Either stop by knowing the player can do no more.
+					// Or ask them to end their turn.
+					
+					viewer.show_occupied(current_player);
 				}
-				// Do the next move.
-				
-				// Possibly followed by another move after trading
-			
-				// Trade and then build or build and then trade.
-				// Or many times in no order.
-				// Either stop by knowing the player can do no more.
-				// Or ask them to end their turn.
-				
-				viewer.show_occupied(current_player);
-				
 			}
 		} // Game ends.
 		
