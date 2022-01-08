@@ -24,12 +24,14 @@ public class Marketplace extends Tradable_Deck{
 	public Marketplace()
 	{
 		this.marketplace = new Resource_Deck();
+		
+		/* moved setup to the Board
 		marketplace.add(new Wood());
 		marketplace.add(new Goat());
 		marketplace.add(new Molasses());
 		marketplace.add(new Cutlass());
 		marketplace.add(new Gold());
-		System.out.println("Marketplace filled up.");
+		System.out.println("Marketplace filled up.");*/
 	}
 	
 	
@@ -94,11 +96,14 @@ public class Marketplace extends Tradable_Deck{
 	public void restock(Object o) 
 	{
 		//TODO: Made sure restock does not occur more than once
-		for (int i = 0; i<maxCardCount; i++)
+		/*for (int i = 0; i<maxCardCount; i++)
 		{
 			this.marketplace.remove(o);
 			System.out.printf("Resource of type %s removed from Marketplace.\n", o);
-		}
+		}*/ //replaced with better method below
+		
+		this.marketplace.remove_all(o);
+		System.out.printf("Resource of type %s removed from Marketplace.\n", o);
 		
 		marketplace.add(new Wood());
 		marketplace.add(new Goat());

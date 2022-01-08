@@ -17,17 +17,22 @@ import cards.Resource;
 import cards.Wood;
 import decks.Coco_Deck;
 import trading_resources.Stockpile;
+import trading_resources.Marketplace;
 
 public class Board
 {
 
 	private int player_count = 0;
 	
-	private int maxResourceCount = 5;
+	private int maxResourceCount = 5; //how many cards of each resource exist in the Stockpile at the start of the game
+	
+	private int totalMarketCount = 5; //how many cards are listed in the marketplace
 			
 	public Coco_Deck coco_deck; // Deck to hold the coco_tiles.
 	
 	public Stockpile stockpile;
+	
+	public Marketplace marketplace;
 	
 	public ArrayList<Island> islands = new ArrayList<Island>(); 
 	
@@ -65,6 +70,8 @@ public class Board
 		this.islands = this.setup_islands();
 		
 		this.stockpile = this.setup_stock_cards();
+		
+		this.marketplace = this.setup_market();
 	}
 	
 	private Coco_Deck setup_coco_tiles()
@@ -125,11 +132,27 @@ public class Board
 			stock.add_card(new Molasses());
 			stock.add_card(new Cutlass());
 			stock.add_card(new Gold());
-			System.out.println("One round of Stock cards Added");
+			System.out.println("One round of Stockpile cards Added.");
 		}
-		
 		//System.out.println("Stockpile is: %s \n");
 		return stock;
+	}
+	
+	private Marketplace setup_market()
+	{
+		System.out.println("Setting up cards in the marketplace...");
+		
+		Marketplace market = new Marketplace();
+
+		//ad one of each resource card to the marketplace
+		market.add_card(new Wood());
+		market.add_card(new Goat());
+		market.add_card(new Molasses());
+		market.add_card(new Cutlass());
+		market.add_card(new Gold());
+		System.out.println("Marketplace filled up.");
+		
+		return market;
 	}
 	
 	/* Create Islands A to M.
@@ -585,6 +608,34 @@ public class Board
 		}
 		
 	}
+	
+	// retrieve current cards listed in the marketplace
+	public void get_marketplace()
+	{
+		//see what cards are currently in the market
+		//list through market instance
+
+			System.out.printf("*********************\nResources currently in Marketplace:%s\n*******************\n", this.marketplace.resource_string());
+
+	}
+	
+	public void trade_to_marketplace(Object a, Object b)
+	{
+		//take cards in/out of marketplace.
+		//also refresh and restock as needed
+		
+		//take out resource A, replace empty slot with resource B
+		this.marketplace.remove_card(a);
+		this.marketplace.add_card(b);
+		if(this.marketplace.refresh_deck())
+		{
+			//restock marketplace: assuming all cards are now of type b, remove the deck and replace with 5 fresh resource cards
+			this.marketplace.restock(b);
+			//TODO: Add all five of that resource back to stockpile
+		}
+			
+	}
+	
 	
 	public String toString()
 	{
