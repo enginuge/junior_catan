@@ -25,8 +25,8 @@ public class Build_Lair extends Build_Turn
 		Resource_Deck cost = super.set_cost();
 		
 		cost.add(new Cutlass());
-		cost.add(new Molasses());
 		cost.add(new Goat());
+		cost.add(new Molasses());
 		cost.add(new Wood());
 		
 		return cost;

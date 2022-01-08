@@ -114,8 +114,8 @@ public class Resource_Deck implements Deck
 		for(i=0; i < n; i++)
 		{
 			// Debug.
-//			System.out.println(temp_this);
-//			System.out.println(temp_small);
+			System.out.println(temp_this);
+			System.out.println(temp_small);
 			m = temp_small.size();
 
 			r = temp_this.get(i);
@@ -134,8 +134,9 @@ public class Resource_Deck implements Deck
 					
 					m = temp_small.size();
 					
-					i = 0;
-					j = 0;
+					i = -1; // as they will be incremented one anyway.
+					
+					j = -1; // as they will be incremented one anyway.
 				}
 			}
 		}
@@ -146,6 +147,7 @@ public class Resource_Deck implements Deck
 			return true;
 		
 		System.out.println("Small is not empty after check.");
+		
 		return false;
 	}
 	
@@ -156,19 +158,6 @@ public class Resource_Deck implements Deck
 		
 		List<Resource> temp_other = other.list_resources();
 
-//		for(Resource r: this.resources)
-//		{
-//			for(Resource s: temp_other)
-//			{
-//				if(r.equals(s))
-//				{
-//					this.remove(s);
-//					
-//					// must remove the temp resources otherwise it will subtract until no resources are left in the players deck.
-//					temp_other.remove(s);
-//				}
-//			}
-//		}
 		int n = this.resources.size();
 
 		int m = temp_other.size();
