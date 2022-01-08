@@ -145,6 +145,8 @@ public class Viewer
 	{
 		String message = String.format("Player %s Wins the Game!\n", Model.getInstance().get_winner());
 		
+		System.out.println(message);
+		
 		return message;
 	}
 	

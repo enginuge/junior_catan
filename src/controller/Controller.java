@@ -119,6 +119,7 @@ public class Controller
 		
 		Player current_player;
 		
+		// Repeat the 4 Players Turns.
 		while(keep_playing)
 		{
 			// Check Players Scores.
@@ -132,7 +133,8 @@ public class Controller
 				}
 			}
 			
-			for(t=0; t<model.table.player_count; t++ )
+			// Four Players Turns.
+			for(t=0;keep_playing & (t<model.table.player_count); t++ )
 			{
 				current_player = model.table.players.get(t);
 				
@@ -195,11 +197,22 @@ public class Controller
 					// Or ask them to end their turn.
 					
 					viewer.show_occupied(current_player);
-				}
-			}
+				} // End of repeated action loop.
+				
+				// Check Players Scores after each player finishes their turn.
+				for(Player p: this.model.table.players)
+				{
+					if(p.get_score() >= 7)
+					{
+						keep_playing = false;
+						
+						model.set_winner(p);
+					}
+				} // End of checking score.
+			} // End of The 4 player's turn set.
 		} // Game ends.
 		
-		viewer.game_over();
+		viewer.game_over(); // Notify the players of a winner.
 	}
 
 	private void play_turn(Turn turn) 
