@@ -1,6 +1,12 @@
 package Player;
 
+import java.util.ArrayList;
+
+import board.Channel;
+import board.Lair;
+import board.Occupied_Land;
 import decks.Hand;
+import decks.Resource_Deck;
 
 public class Player
 {
@@ -8,7 +14,9 @@ public class Player
 	
 	public Hand hand; // hand with both decks.
 	
-	public int score;
+	private int score;
+	
+	private Occupied_Land occupied;
 	
 	public Player(String name)
 	{
@@ -17,6 +25,8 @@ public class Player
 		this.hand = new Hand();
 		
 		this.score = 0;
+		
+		this.occupied = new Occupied_Land();
 	}
 	
 	public void collect_resource(Object o)
@@ -33,11 +43,52 @@ public class Player
 	
 	public int get_score()
 	{
+		this.score = this.occupied.get_lairs().size();
+		
 		return this.score;
 	}
 	
+//	public void add_point()
+//	{
+//		this.score++;
+//	}
+	
 	public String toString()
 	{
-		return String.format("Name: %s", this.name);
+		return String.format("%s", this.name);
+	}
+	
+	public Resource_Deck get_resource_deck()
+	{
+		return this.hand.get_resource_deck();
+	}
+	
+	public void add_lair(Lair l)
+	{
+		this.occupied.add_lair(l);
+	}
+	
+	public void add_channel(Channel c)
+	{
+		this.occupied.add_channel(c);
+	}
+
+	public String occupied_string() 
+	{
+		String message;
+		
+		message = String.format("%s", this.occupied);
+		
+		return message;
+	}
+	
+	public ArrayList<Lair> get_free_lair()
+	{
+		return this.occupied.get_free_lairs();
+	}
+	
+	public ArrayList<Channel> get_free_channel()
+	{
+		return this.occupied.get_free_channels();
 	}
 }

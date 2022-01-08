@@ -1,6 +1,10 @@
 package viewer;
 
+import java.util.ArrayList;
+
 import Player.Player;
+import board.Channel;
+import board.Lair;
 import model.Model;
 
 /*
@@ -34,7 +38,20 @@ public class Viewer
 		System.out.printf("Are you ready to roll?\n");
 		
 		return ask.get_input();
+	}
+	
+	public String ask_for_action(Player p)
+	{
+		Get_Action ga = new Get_Action(p);
 		
+		return ga.get_input();
+	}
+	
+	public String ask_to_build(Player p)
+	{
+		Ask_Building ab = new Ask_Building(p);
+		
+		return ab.get_input();
 	}
 	
 	public String display_roll()
@@ -57,6 +74,71 @@ public class Viewer
 		System.out.println(message);
 		
 		return message;
+	}
+	
+	public String show_occupied(Player p)
+	{
+		String message;
+		
+		message = String.format("=====\n%s\n----\nScore:\t%d\n%s\n=====", p.get_name(), p.get_score(), p.occupied_string());
+		
+		System.out.println(message);
+		
+		return message;
+	}
+	
+	public String show_available_lairs(Player p)
+	{
+		String message="";
+		
+		for(Lair l: p.get_free_lair())
+		{
+			message += l.toString() + "\n";
+		}
+		
+		message = String.format("Available Lairs to build for %s:\n%s", p.get_name(), message);
+		
+		System.out.println(message);
+		
+		return message;
+	}
+	
+	public Lair ask_for_lair(Player p,  ArrayList<Lair> lairs)
+	{
+		Lair chosen;
+		
+		String answer;
+
+		int lair_id;
+		
+		Ask_For_Lair ask = new Ask_For_Lair(p, lairs);
+		
+		answer = ask.get_input();
+		
+		lair_id = Integer.valueOf(answer);
+		
+		chosen = Model.getInstance().table.board.get_lair_by_id(lairs, lair_id);
+		
+		return chosen;
+	}
+	
+	public Channel ask_for_channel(Player p,  ArrayList<Channel> channels)
+	{
+		Channel chosen;
+		
+		String answer;
+
+		int id;
+		
+		Ask_For_Channel ask = new Ask_For_Channel(p, channels);
+		
+		answer = ask.get_input();
+		
+		id = Integer.valueOf(answer);
+		
+		chosen = Model.getInstance().table.board.get_channel_by_id(id);
+		
+		return chosen;
 	}
 	
 	public String game_over()

@@ -6,7 +6,9 @@ package viewer;
  */
 public interface PlayerInput
 {
-	public String prompt();
+	public String get_prompt();
+	
+	public String set_prompt(String message);
 	
 	public String scan();
 	
