@@ -1,7 +1,6 @@
 package controller;
 
 import Player.Player;
-import board.Lair;
 import model.Model;
 import viewer.Viewer;
 
@@ -37,10 +36,6 @@ public class Controller
 	{
 		this.model.table.players = model.table.create_players();
 		
-//		model.table.board.coco_deck = model.table.board.setup_coco_tiles();
-//
-//		model.table.board.islands = model.table.board.setup_islands();
-		
 		this.model.table.board.setup();
 		
 		// Attach the Islands after the Die is created in Table.
@@ -61,12 +56,20 @@ public class Controller
 					
 					this.model.table.board.set_lair_owner(26, p);
 					
+					this.model.table.board.set_channel_owner(25, p);
+
+					this.model.table.board.set_channel_owner(10, p);
+
 					break;
 				
 				case "White":
 					this.model.table.board.set_lair_owner(3, p);
 					
 					this.model.table.board.set_lair_owner(23, p);
+					
+					this.model.table.board.set_channel_owner(3, p);
+
+					this.model.table.board.set_channel_owner(18, p);
 					
 					break;
 			
@@ -75,6 +78,10 @@ public class Controller
 					
 					this.model.table.board.set_lair_owner(29, p);
 					
+					this.model.table.board.set_channel_owner(5, p);
+					
+					this.model.table.board.set_channel_owner(16, p);
+
 					break;
 					
 				case "Blue":
@@ -82,6 +89,10 @@ public class Controller
 					
 					this.model.table.board.set_lair_owner(30, p);
 					
+					this.model.table.board.set_channel_owner(12, p);
+
+					this.model.table.board.set_channel_owner(23, p);
+
 					break;
 			
 				default:
@@ -99,6 +110,10 @@ public class Controller
 		
 		int t;
 		String a;
+		String action; // the move the player wants to make. 
+		String build_choice;
+		
+		Turn turn = null;
 		
 		Player current_player;
 		
@@ -107,7 +122,7 @@ public class Controller
 			// Check Players Scores.
 			for(Player p: this.model.table.players)
 			{
-				if(p.score >= 7)
+				if(p.get_score() >= 7)
 				{
 					keep_playing = false;
 					
@@ -132,10 +147,73 @@ public class Controller
 				}
 				
 				viewer.show_inventory(current_player);
-
+				
+				// Ask for the next move.
+				action = viewer.ask_for_action(current_player);
+				
+				switch(action)
+				{
+					case "Build":
+						build_choice = viewer.ask_to_build(current_player);
+						
+						if(build_choice.equals("Lair")) {
+							turn = new Build_Lair(current_player);
+							System.out.println("Lair case chosen.");
+						}
+						else if(build_choice.equals("Ship"))
+							turn = new Build_Ship(current_player);
+							
+//						turn.act();
+						this.play_turn(turn);
+						
+						break;
+						
+					case "Trade":
+						
+						break;
+						
+					case "Finish":
+						
+						break;
+						
+					default:
+						break;
+				}
+				// Do the next move.
+				
+				// Possibly followed by another move after trading
+			
+				// Trade and then build or build and then trade.
+				// Or many times in no order.
+				// Either stop by knowing the player can do no more.
+				// Or ask them to end their turn.
+				
+				viewer.show_occupied(current_player);
+				
 			}
 		} // Game ends.
 		
 		viewer.game_over();
+	}
+
+	private void play_turn(Turn turn) 
+	{
+		turn.act();
+	}
+	
+	/* Where is the player allowed to build.
+	 * Where they have neighboring areas and not already occupied.
+	 * */
+	public void available_to_build(Player p)
+	{
+		Model.getInstance();
+		
+		switch(p.get_name())
+		{
+			case "Orange":
+				
+				
+				break;
+		}
 	}
 } // end of class.

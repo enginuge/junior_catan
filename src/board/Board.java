@@ -25,7 +25,13 @@ public class Board
 	public Coco_Deck coco_deck; // Deck to hold the coco_tiles.
 	
 	public ArrayList<Island> islands = new ArrayList<Island>(); 
+	
+	public ArrayList<Lair> lairs = new ArrayList<Lair>(); 
 
+	public ArrayList<Channel> channels = new ArrayList<Channel>();
+	
+	public Occupied_Land occupied = new Occupied_Land();
+	
 	private static Board uniqueInstance = null;
 
 	public static Board getInstance()
@@ -143,6 +149,208 @@ public class Board
 		
 		return new_lairs;
 	}
+	
+	public ArrayList<Channel> create_channels(ArrayList<Lair> lairs)
+	{
+		ArrayList<Channel> new_channels = new ArrayList<Channel>();
+		
+		int i;
+		
+		int n = 37;
+		
+		for(i = 1; i <= n; i++)
+		{
+			new_channels.add(new Channel(i));
+		}
+		
+		for(Channel c: new_channels)
+		{
+			switch(c.get_id())
+			{
+			case(1):
+				c.add_pair(get_lair_by_id(lairs, 1), get_lair_by_id(lairs, 2));
+				break;
+			case(2):
+				c.add_pair(get_lair_by_id(lairs, 2), get_lair_by_id(lairs, 3));
+				break;
+			case(3):
+				c.add_pair(get_lair_by_id(lairs, 3), get_lair_by_id(lairs, 4));
+				break;
+			case(4):
+				c.add_pair(get_lair_by_id(lairs, 4), get_lair_by_id(lairs, 9));
+				break;
+			case(5):
+				c.add_pair(get_lair_by_id(lairs, 9), get_lair_by_id(lairs, 10));
+				break;
+			case(6):
+				c.add_pair(get_lair_by_id(lairs, 10), get_lair_by_id(lairs, 14));
+				break;
+			case(7):
+				c.add_pair(get_lair_by_id(lairs, 14), get_lair_by_id(lairs, 18));
+				break;
+			case(8):
+				c.add_pair(get_lair_by_id(lairs, 18), get_lair_by_id(lairs, 22));
+				break;
+			case(9):
+				c.add_pair(get_lair_by_id(lairs, 22), get_lair_by_id(lairs, 26));
+				break;
+			case(10):
+				c.add_pair(get_lair_by_id(lairs, 25), get_lair_by_id(lairs, 26));
+				break;
+			case(11):
+				c.add_pair(get_lair_by_id(lairs, 25), get_lair_by_id(lairs, 28));
+				break;
+			case(12):
+				c.add_pair(get_lair_by_id(lairs, 28), get_lair_by_id(lairs, 30));
+				break;
+			case(13):
+				c.add_pair(get_lair_by_id(lairs, 30), get_lair_by_id(lairs, 32));
+				break;
+			case(14):
+				c.add_pair(get_lair_by_id(lairs, 31), get_lair_by_id(lairs, 32));
+				break;
+			case(15):
+				c.add_pair(get_lair_by_id(lairs, 31), get_lair_by_id(lairs, 29));
+				break;
+			case(16):
+				c.add_pair(get_lair_by_id(lairs, 27), get_lair_by_id(lairs, 29));
+				break;
+			case(17):
+				c.add_pair(get_lair_by_id(lairs, 24), get_lair_by_id(lairs, 27));
+				break;
+			case(18):
+				c.add_pair(get_lair_by_id(lairs, 23), get_lair_by_id(lairs, 24));
+				break;
+			case(19):
+				c.add_pair(get_lair_by_id(lairs, 19), get_lair_by_id(lairs, 23));
+				break;
+			case(20):
+				c.add_pair(get_lair_by_id(lairs, 15), get_lair_by_id(lairs, 19));
+				break;
+			case(21):
+				c.add_pair(get_lair_by_id(lairs, 11), get_lair_by_id(lairs, 15));
+				break;
+			case(22):
+				c.add_pair(get_lair_by_id(lairs, 7), get_lair_by_id(lairs, 11));
+				break;
+			case(23):
+				c.add_pair(get_lair_by_id(lairs, 7), get_lair_by_id(lairs, 8));
+				break;
+			case(24):
+				c.add_pair(get_lair_by_id(lairs, 5), get_lair_by_id(lairs, 8));
+				break;
+			case(25):
+				c.add_pair(get_lair_by_id(lairs, 5), get_lair_by_id(lairs, 6));
+				break;
+			case(26):
+				c.add_pair(get_lair_by_id(lairs, 1), get_lair_by_id(lairs, 6));
+				break;
+			case(27):
+				c.add_pair(get_lair_by_id(lairs, 4), get_lair_by_id(lairs, 5));
+				break;
+			case(28):
+				c.add_pair(get_lair_by_id(lairs, 9), get_lair_by_id(lairs, 13));
+				break;
+			case(29):
+				c.add_pair(get_lair_by_id(lairs, 12), get_lair_by_id(lairs, 13));
+				break;
+			case(30):
+				c.add_pair(get_lair_by_id(lairs, 8), get_lair_by_id(lairs, 12));
+				break;
+			case(31):
+				c.add_pair(get_lair_by_id(lairs, 13), get_lair_by_id(lairs, 17));
+				break;
+			case(32):
+				c.add_pair(get_lair_by_id(lairs, 17), get_lair_by_id(lairs, 18));
+				break;
+			case(33):
+				c.add_pair(get_lair_by_id(lairs, 17), get_lair_by_id(lairs, 21));
+				break;
+			case(34):
+				c.add_pair(get_lair_by_id(lairs, 20), get_lair_by_id(lairs, 21));
+				break;
+			case(35):
+				c.add_pair(get_lair_by_id(lairs, 16), get_lair_by_id(lairs, 20));
+				break;
+			case(36):
+				c.add_pair(get_lair_by_id(lairs, 15), get_lair_by_id(lairs, 16));
+				break;
+			case(37):
+				c.add_pair(get_lair_by_id(lairs, 12), get_lair_by_id(lairs, 16));
+				break;
+				
+			}
+		}
+		
+		// Need to connect all the lairs together with known connections
+		// eg. 1 to 2 and 1 to 6.
+		// They are irregular.
+		
+		// Mark the neighbouring lairs into the lairs themselves, 1 to 2 and 1 to 6...
+		// Make a method that creeates a channel between them.
+		// And another method that marks it as occupied in both lairs. or each lair checks from both lairs perspectives...
+		
+		return new_channels;
+	}
+	
+	public ArrayList<Lair> join_lairs_to_channels(ArrayList<Lair> lairs, ArrayList<Channel> channels)
+	{
+		for(Lair l: lairs)
+		{
+			for(Channel c: channels)
+			{
+				for(Lair l2: c.get_lairs())
+				{
+					if(l.equals(l2))
+					{
+						l.add_channel(c);
+					} // end conditional.
+				} // end lair in channel loop.
+			} // end all channel loop
+		} // end all lairs loop
+		
+		return lairs;
+	}
+	
+	public Lair get_lair_by_id(ArrayList<Lair> lairs, int id)
+	{
+		for(Lair l: lairs)
+		{
+			if(l.get_id() == id)
+				return l;
+		}
+		
+		return new Lair(0);
+	}
+	
+	public Channel get_channel_by_id(int id)
+	{
+		for(Channel c: this.channels)
+		{
+			if(c.get_id()==id)
+				return c;
+		}
+		
+		return new Channel(0);
+	}
+	
+	/* Use on the full list of lairs. */
+//	public ArrayList<Lair> connect_lairs(ArrayList<Lair> lairs)
+//	{
+//		for(Lair l: lairs)
+//		{
+//			switch(l.get_id())
+//			{
+//				case 1:
+//					
+//					break;
+//				
+//			}
+//		}
+//		
+//		return lairs;
+//	}
+	
 	
 	/* Add the Lairs to the Islands.
 	 * Because it is a fixed board game it must
@@ -286,6 +494,10 @@ public class Board
 		
 		made_lairs = this.create_lairs();
 		
+		this.channels = this.create_channels(made_lairs);
+		
+		made_lairs = this.join_lairs_to_channels(made_lairs, this.channels);
+		
 		this.place_lairs(made_islands, made_lairs);
 		
 		return made_islands;
@@ -303,11 +515,50 @@ public class Board
 		{
 			for(Lair l: i.lairs)
 			{
-				if(l.identity == lair_id)
+				if(l.get_id() == lair_id)
 					l.set_owner(player);
 			}
 		}
 	}
+	
+	public void set_channel_owner(int channel_id, Player player)
+	{
+		for(Channel c: this.channels)
+		{
+			if(c.get_id() == channel_id)
+			{
+				c.set_owner(player);
+			}
+		}
+	}
+	
+	public void get_owned()
+	{
+//		ArrayList<Lair> owned_lairs = new ArrayList<Lair>();
+//		
+//		ArrayList<Channel> owned_channels = new ArrayList<Channel>();
+		
+		for(Island i: this.islands)
+		{
+			for(Lair l: i.lairs)
+			{
+				if(l.occupied)
+					this.occupied.add_lair(l);
+			}
+		}
+		
+		// Owned channels will only be connected to owned lairs.
+		for(Channel c: this.channels)
+		{
+			for(Lair l: this.occupied.get_lairs())
+			{
+				if(c.connects_to(l))
+					this.occupied.add_channel(c);
+			}	
+		}
+		
+	}
+	
 	public String toString()
 	{
 		String output;

@@ -36,4 +36,17 @@ public abstract class Resource
 	{
 		return (this.type.toString()).compareTo(res2.toString());
 	}
+	
+	public String get_type()
+	{
+		return this.type;
+	}
+	
+	public boolean equals(Resource other)
+	{
+		if(this.type.equals(other.get_type() ) )
+			return true;
+		
+		return false;
+	}
 }
