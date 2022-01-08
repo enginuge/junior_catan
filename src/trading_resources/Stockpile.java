@@ -37,11 +37,11 @@ public class Stockpile extends Tradable_Deck{
 	
 	private Resource_Deck stockpile;
 	
-	/* Constructor. Fills up the Stockpile to it's max amount*/
+	/* Constructor. */
 	public Stockpile()
 	{
 		this.stockpile = new Resource_Deck();
-		for (int i = 0; i<maxResourceCount; i++)
+		/*for (int i = 0; i<maxResourceCount; i++)
 		{
 			stockpile.add(new Wood());
 			stockpile.add(new Goat());
@@ -49,7 +49,7 @@ public class Stockpile extends Tradable_Deck{
 			stockpile.add(new Cutlass());
 			stockpile.add(new Gold());
 			System.out.println("One round of Stock cards added");
-		}
+		}*/ //Moved to setup in Board
 	}
 	
 	
