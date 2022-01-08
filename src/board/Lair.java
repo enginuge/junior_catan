@@ -83,7 +83,7 @@ public class Lair implements Observer
 	/*
 	 * When the lair is updated, each owner must receive the resource of the island that won.
 	 */
-//	@Override // Not an Override as it has an input, which makes it a different fnuction.
+//	@Override // Not an Override as it has an input, which makes it a different function.
 	public void update(Object o)
 	{
 		if(this.occupied)

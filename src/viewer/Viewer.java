@@ -54,6 +54,13 @@ public class Viewer
 		return ab.get_input();
 	}
 	
+	public String ask_to_trade(Player p)
+	{
+		Ask_To_Trade att = new Ask_To_Trade(p);
+		
+		return att.get_input();
+	}
+	
 	public String display_roll()
 	{
 		String message;

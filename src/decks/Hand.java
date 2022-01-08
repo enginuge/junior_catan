@@ -22,6 +22,11 @@ public class Hand
 		this.resource_deck.add(o);
 	}
 	
+	public void remove_all_of_type(Object o)
+	{
+		this.resource_deck.remove_all(o);
+	}
+	
 	public String resource_string()
 	{
 		this.resource_deck.sort();

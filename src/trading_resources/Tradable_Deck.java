@@ -14,7 +14,7 @@ import decks.Hand;
 import decks.Resource_Deck;
 
 
-public class Tradable_Deck{
+public abstract class Tradable_Deck{
 
 	/* TODO: Stockpile could be comprised of five stacks*/
 	//public Stack<Gold> gold_card;
@@ -23,37 +23,25 @@ public class Tradable_Deck{
 	//public Stack<Cutlass> cutlass_card;
 	//public Stack<Goat> goat_card;
 	
-	private Resource_Deck Tradable_Deck;
-	
-	/* Constructor. Fills up the Stockpile to it's max amount*/
-	public Tradable_Deck()
-	{
-		
-	}
+	public Resource_Deck Tradable_Deck;
 	
 	/* Add a resource card to the stock pile */
 	public void add_card(Object o) //for trading
 	{
-		
+		this.Tradable_Deck.add(o);
 	}
 	
 	/* Remove a resource card from the stock pile */
 	public void remove_card(Object o)
 	{
-		
+		this.Tradable_Deck.remove(o);
 	}
 	
-	public boolean refresh_deck()
-	{
-		return true;
-	}
+	public abstract boolean refresh_deck();
 	
-//
-	public void restock(Object o) // add a max count of whatever was missing
-	{
-		
-	}
-//
+
+	public abstract void restock(Object o); // add a max count of whatever was missing
+
 	
 	public String resource_string()
 	{

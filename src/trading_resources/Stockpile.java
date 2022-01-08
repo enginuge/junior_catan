@@ -23,7 +23,7 @@ public class Stockpile extends Tradable_Deck{
 	//public Stack<Cutlass> cutlass_card;
 	//public Stack<Goat> goat_card;
 	
-	public static Stockpile uniqueInstance = null; // A deck for the board's stockpile
+	/*public static Stockpile uniqueInstance = null; // A deck for the board's stockpile
 	
 	public static Stockpile getInstance()
 	{
@@ -31,7 +31,7 @@ public class Stockpile extends Tradable_Deck{
 			uniqueInstance = new Stockpile();
 		
 		return uniqueInstance;
-	}
+	}*/
 	
 	private int maxResourceCount = 5;
 	
@@ -52,19 +52,22 @@ public class Stockpile extends Tradable_Deck{
 		}
 	}
 	
+	
 	/* Add a resource card to the stock pile */
-	public void add_stock(Object o) //for trading
+	@Override
+	public void add_card(Object o) //for trading
 	{
 		this.stockpile.add(o);
 	}
 	
 	/* Remove a resource card from the stock pile */
-	public void remove_stock(Object o)
+	@Override
+	public void remove_card(Object o)
 	{
 		this.stockpile.remove(o);
 	}
 	
-	public boolean refresh_stock()
+	public boolean refresh_deck()
 	{
 		//cycle through all items in stockpile, adding their count
 		int total = this.stockpile.size();
@@ -101,8 +104,8 @@ public class Stockpile extends Tradable_Deck{
 		else
 			return false;
 	}
+
 	
-//
 	public void restock(Object o) // add a max count of whatever was missing
 	{
 		//TODO: Made sure restock does not occur more than once
@@ -112,11 +115,12 @@ public class Stockpile extends Tradable_Deck{
 		}
 		System.out.printf("All resources of type %s have been restocked back on the board.\n", o);
 	}
-//
+
 	
 	public String resource_string()
 	{
 		return this.stockpile.toString();
 	}
+
 
 }
