@@ -81,9 +81,16 @@ public class Occupied_Land
 	
 	public String toString()
 	{
-		String message;
+		String message, lair_string="", channel_string="";
 		
-		message = String.format("Lairs:\t%s\nChannels:\t%s", this.lairs, this.channels);
+		for(Lair l: this.lairs)
+			lair_string = String.format("%s %2d", lair_string, l.get_id());
+		
+		
+		for(Channel c: this.channels)
+			channel_string = String.format("%s %2d", channel_string, c.get_id());
+		
+		message = String.format("Lairs:\t\t%s\nChannels:\t%s", lair_string, channel_string);
 		
 		return message;
 	}
