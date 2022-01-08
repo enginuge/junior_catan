@@ -87,19 +87,19 @@ public class Resource_Deck implements Deck
 		
 		if(temp_this.isEmpty())
 		{
-			System.out.println("This resources empty.");
+//			System.out.println("This resources empty.");
 			return false;
 		}
 		
 		if(temp_small.isEmpty())
 		{
-			System.out.println("small resources empty.");
+//			System.out.println("small resources empty.");
 			return false;
 		}		
 		
 		if(temp_this.size() < temp_small.size())
 		{
-			System.out.println("This smaller than small.");
+//			System.out.println("This smaller than small.");
 			return false;
 		}
 
@@ -146,7 +146,7 @@ public class Resource_Deck implements Deck
 		if(temp_small.size() == 0)
 			return true;
 		
-		System.out.println("Small is not empty after check.");
+//		System.out.println("Small is not empty after check.");
 		
 		return false;
 	}
