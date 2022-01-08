@@ -58,6 +58,9 @@ public class Stockpile extends Tradable_Deck{
 	public void add_card(Object o) //for trading
 	{
 		this.stockpile.add(o);
+		//debugging
+		System.out.printf("%s added back to Stockpile.\n", o);
+		
 	}
 	
 	/* Remove a resource card from the stock pile */
@@ -65,6 +68,8 @@ public class Stockpile extends Tradable_Deck{
 	public void remove_card(Object o)
 	{
 		this.stockpile.remove(o);
+		//debugging
+		System.out.printf("%s removed from Stockpile.\n", o);
 	}
 	
 	public boolean refresh_deck()
