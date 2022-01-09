@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import Player.Player;
 import board.Channel;
 import board.Lair;
+import decks.Resource_Deck;
 import model.Model;
 
 /*
@@ -59,6 +60,20 @@ public class Viewer
 		Ask_To_Trade att = new Ask_To_Trade(p);
 		
 		return att.get_input();
+	}
+	
+	public String show_Marketplace()
+	{
+		Resource_Deck marketdeck = Model.getInstance().table.board.get_marketplace();
+		String mstring = marketdeck.toString();
+		return mstring;
+	}
+	
+	public String ask_for_marketcard(Player p, Resource_Deck availableCards)
+	{
+		Ask_For_MarketCard card = new Ask_For_MarketCard(p, availableCards);
+		
+		return card.get_input();
 	}
 	
 	public String display_roll()

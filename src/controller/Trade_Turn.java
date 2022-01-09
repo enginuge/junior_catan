@@ -18,27 +18,25 @@ public abstract class  Trade_Turn extends Turn
 		this.trade= this.set_trade();
 	}
 	
-	//
-	public Resource_Deck get_trade(Player p, Object o) //what resources are being sought
+	public Resource_Deck set_trade() //what resources are being requested
+	{
+		trade = new Resource_Deck();
+		return trade;
+	}
+	
+	public Resource_Deck get_trade() //what resources are offered to trade
+	{
+		return this.trade;
+	}
+	
+	/*public Resource_Deck get_trade(Player p, Object o) //what resources are being sought
 	{
 		Resource_Deck trade = new Resource_Deck();
 
 		trade.add(o);
 		
-		return trade;
-	}
-	
-	public Resource_Deck set_trade() //what resources are being offered to trade
-	{
-		trade = new Resource_Deck();
-		
-		return trade;
-	}
-	
-	public Resource_Deck get_trade()
-	{
 		return this.trade;
-	}
+	}*/
 	
 	/* Is the player able to afford the build costs? */
 	public boolean check_trade()
@@ -51,7 +49,7 @@ public abstract class  Trade_Turn extends Turn
 	
 	public String toString()
 	{
-		String message = String.format("Trade Turn.\nCost:\t%s", this.trade);
+		String message = String.format("Trade Turn.\nTrading:\t%s", this.trade);
 		
 		return message; 
 	}

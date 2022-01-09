@@ -16,6 +16,7 @@ import cards.Molasses;
 import cards.Resource;
 import cards.Wood;
 import decks.Coco_Deck;
+import decks.Resource_Deck;
 import trading_resources.Stockpile;
 import trading_resources.Marketplace;
 
@@ -610,12 +611,13 @@ public class Board
 	}
 	
 	// retrieve current cards listed in the marketplace
-	public void get_marketplace()
+	public Resource_Deck get_marketplace()
 	{
 		//see what cards are currently in the market
 		//list through market instance
-
-			System.out.printf("*********************\nResources currently in Marketplace:%s\n*******************\n", this.marketplace.resource_string());
+		return this.marketplace.get_marketplace();
+		//return this.marketplace.resource_string();
+		//
 
 	}
 	
@@ -626,6 +628,7 @@ public class Board
 		
 		//take out resource A, replace empty slot with resource B
 		this.marketplace.remove_card(a);
+		//player updated
 		this.marketplace.add_card(b);
 		if(this.marketplace.refresh_deck())
 		{
@@ -633,7 +636,6 @@ public class Board
 			this.marketplace.restock(b);
 			//TODO: Add all five of that resource back to stockpile
 		}
-			
 	}
 	
 	

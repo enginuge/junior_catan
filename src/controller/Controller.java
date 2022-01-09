@@ -173,13 +173,13 @@ public class Controller
 						trade_choice = viewer.ask_to_trade(current_player);
 						
 						if(trade_choice.equals("Stockpile")) {
-							//turn = new Build_Lair(current_player);
-							//System.out.println("Lair case chosen.");
+							System.out.println("Stockpile chosen for trade.");
 						}
-						else if(trade_choice.equals("Marketplace"))
-							//turn = new Build_Ship(current_player);
+						else if(trade_choice.equals("Marketplace")) {
+							System.out.println("Marketplace chosen for trade.");
+							turn = new Trade_Marketplace(current_player);
+						}
 							
-//						turn.act();
 						this.play_turn(turn);
 						
 						break;

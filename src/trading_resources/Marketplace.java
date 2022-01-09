@@ -110,7 +110,12 @@ public class Marketplace extends Tradable_Deck{
 		marketplace.add(new Molasses());
 		marketplace.add(new Cutlass());
 		marketplace.add(new Gold());
-		System.out.println("Marketplace Has Been Freshyl Restocked.");
+		System.out.println("Marketplace Has Been Freshly Restocked.");
+	}
+	
+	public Resource_Deck get_marketplace()
+	{
+		return this.marketplace;
 	}
 
 	

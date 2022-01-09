@@ -242,6 +242,7 @@ public class Resource_Deck implements Deck
 		
 		return s;
 	}
+
 	
 	public static void main(String[] args)
 	{
