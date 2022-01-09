@@ -39,6 +39,7 @@ public class Marketplace extends Tradable_Deck{
 	@Override
 	public void add_card(Object o) //for trading
 	{
+		//Resource r = (Resource)o;
 		this.marketplace.add(o);
 		System.out.printf("%s placed on Marketplace.\n", o);
 	}
@@ -47,6 +48,7 @@ public class Marketplace extends Tradable_Deck{
 	@Override
 	public void remove_card(Object o)
 	{
+		//Resource r = (Resource)o;
 		this.marketplace.remove(o);
 		System.out.printf("%s removed from Marketplace.\n", o);
 	}
@@ -67,23 +69,23 @@ public class Marketplace extends Tradable_Deck{
 		for (int i = 0; i<total; i++)
 		{
 			String currentResource = this.marketplace.toString();
-			if (currentResource == "gold")
+			if (currentResource == "Gold")
 				countGold++;
 			
-			else if(currentResource == "goat")
+			else if(currentResource == "Goat")
 				countGoat++;
 			
-			else if (currentResource == "molasses")
+			else if (currentResource == "Molasses")
 				countMolasses++;
 			
-			else if (currentResource == "wood")
+			else if (currentResource == "Wood")
 				countWood++;
 			
-			else if (currentResource == "cutlass")
+			else if (currentResource == "Cutlass")
 				countCutlass++;
 		}
 		
-		if (countGold == maxCardCount || countCutlass == maxCardCount || countWood == maxCardCount || countMolasses == maxCardCount || countGoat == maxCardCount)
+		if (countGold > maxCardCount || countCutlass > maxCardCount || countWood > maxCardCount || countMolasses > maxCardCount || countGoat > maxCardCount)
 		{	
 			return true;
 		}
@@ -102,8 +104,10 @@ public class Marketplace extends Tradable_Deck{
 			System.out.printf("Resource of type %s removed from Marketplace.\n", o);
 		}*/ //replaced with better method below
 		
-		this.marketplace.remove_all(o);
-		System.out.printf("Resource of type %s removed from Marketplace.\n", o);
+		Resource r = (Resource)o;
+		
+		this.marketplace.remove_all(r);
+		System.out.printf("Resource of type %s removed from Marketplace.\n", r);
 		
 		marketplace.add(new Wood());
 		marketplace.add(new Goat());

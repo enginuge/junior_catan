@@ -30,32 +30,33 @@ public class Trade_Marketplace extends Trade_Turn{
 	}
 	
 	
-	public Resource_Deck set_DesiredResource(String a)
+	//string to resource conversion
+	public Resource set_DesiredResource(String a)
 	{
-		Resource_Deck desiredResource = super.set_trade();
+		Resource desiredResource = super.set_trade();
 		
-		if (a == "goat")
-			desiredResource.add(new Goat());
+		if (a == "Goat")
+			desiredResource = (new Goat());
 		
-		else if (a == "gold")
-			desiredResource.add(new Gold());
+		else if (a == "Gold")
+			desiredResource = (new Gold());
 		
-		else if (a == "molasses")
-		desiredResource.add(new Molasses());
+		else if (a == "Molasses")
+		desiredResource = (new Molasses());
 		
-		else if (a == "wood")
-			desiredResource.add(new Wood());
+		else if (a == "Wood")
+			desiredResource = (new Wood());
 		
-		else if (a == "cutlass")
-			desiredResource.add(new Cutlass());
+		else if (a == "Cutlass")
+			desiredResource = (new Cutlass());
 		
 		return desiredResource;
 	}
 	
-	public Resource_Deck get_PlayerResource(Object b)
+	public Resource get_PlayerResource(Resource b)
 	{
-		Resource_Deck totrade = super.get_trade();
-		totrade.add(b);
+		Resource totrade = super.get_trade();
+		totrade = b;
 		return totrade;
 	}
 
@@ -79,16 +80,20 @@ public class Trade_Marketplace extends Trade_Turn{
 		
 		if(this.get_market_inventory().size() > 0)
 		{
-			Resource_Deck playercard = new Resource_Deck();
-			playercard = this.get_PlayerResource(new Goat());
+			Object playercard = this.get_PlayerResource(new Goat());
+			//playercard 
 			
 			//show player the current marketplace inventory
 			this.get_market_inventory();
 			
 			//ask player to pick a marketplace card
 			String wantedCards = Viewer.getInstance().ask_for_marketcard(this.get_player(),this.get_market_inventory());
-			Resource_Deck marketcard = new Resource_Deck();
-			marketcard = this.set_DesiredResource(wantedCards);
+			Object marketcard = this.set_DesiredResource(wantedCards);
+			
+			
+			
+			//********NB************
+			//both marketcard and wantedcard must be OBJECTS (single cards)
 			
 			
 			//MAKE TRADE: make sure to refresh the deck each time and restock if needed
