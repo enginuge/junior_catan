@@ -36,7 +36,7 @@ public class Resource_Deck implements Deck
 		
 		for(int i=0; i < resources.size(); i++)
 		{
-			if(r == resources.get(i))
+			if(r.equals(resources.get(i)))
 			{
 				resources.remove(i);
 				

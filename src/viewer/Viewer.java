@@ -76,6 +76,13 @@ public class Viewer
 		return card.get_input();
 	}
 	
+	public String ask_for_playercard(Player p, Resource_Deck availableCards)
+	{
+		Ask_For_PlayerCard card = new Ask_For_PlayerCard(p, availableCards);
+		
+		return card.get_input();
+	}
+	
 	public String display_roll()
 	{
 		String message;

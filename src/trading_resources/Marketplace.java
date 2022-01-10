@@ -49,22 +49,35 @@ public class Marketplace extends Tradable_Deck{
 	public void remove_card(Object o)
 	{
 		//Resource r = (Resource)o;
-		this.marketplace.remove(o);
-		System.out.printf("%s removed from Marketplace.\n", o);
+		if(this.marketplace.remove(o))
+			System.out.printf("%s removed from Marketplace.\n", o);
 	}
 	
 	//cycle through the deck to check whether it must be updated or not
 	public boolean refresh_deck()
 	{
 		//cycle through all items in marketplace, adding their count
-		int total = this.marketplace.size();
+		int totalSize = this.marketplace.size();
 		int countGold = 0;
 		int countCutlass = 0;
 		int countWood = 0;
 		int countMolasses = 0;
 		int countGoat = 0;
+		String gd = "Gold";
+		String gt = "Goat";
+		String m = "Molasses";
+		String c = "Cutlass";
+		String w = "Wood";
 		
 		
+		countGold = this.marketplace.toString().split(gd, -1).length-1;
+		countGoat = this.marketplace.toString().split(gt, -1).length-1;
+		countCutlass = this.marketplace.toString().split(c, -1).length-1;
+		countMolasses = this.marketplace.toString().split(m, -1).length-1;
+		countWood = this.marketplace.toString().split(w, -1).length-1;
+		
+		
+		/*
 		//count how many resources of each type are left in the stock
 		for (int i = 0; i<total; i++)
 		{
@@ -83,9 +96,11 @@ public class Marketplace extends Tradable_Deck{
 			
 			else if (currentResource == "Cutlass")
 				countCutlass++;
-		}
+		}*/
 		
-		if (countGold > maxCardCount || countCutlass > maxCardCount || countWood > maxCardCount || countMolasses > maxCardCount || countGoat > maxCardCount)
+		
+		
+		if (countGold >= maxCardCount || countCutlass >= maxCardCount || countWood >= maxCardCount || countMolasses >= maxCardCount || countGoat >= maxCardCount)
 		{	
 			return true;
 		}
@@ -107,7 +122,7 @@ public class Marketplace extends Tradable_Deck{
 		Resource r = (Resource)o;
 		
 		this.marketplace.remove_all(r);
-		System.out.printf("Resource of type %s removed from Marketplace.\n", r);
+		System.out.printf("Marketplace is now full and will be restocked.\nAll resources of type %s have been removed from Marketplace.\n", r);
 		
 		marketplace.add(new Wood());
 		marketplace.add(new Goat());

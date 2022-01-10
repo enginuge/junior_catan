@@ -3,7 +3,12 @@ package controller;
 import java.util.ArrayList;
 
 import Player.Player;
+import cards.Cutlass;
+import cards.Goat;
+import cards.Gold;
+import cards.Molasses;
 import cards.Resource;
+import cards.Wood;
 import decks.Resource_Deck;
 
 
@@ -27,6 +32,27 @@ public abstract class  Trade_Turn extends Turn
 	public Resource get_trade() //what resources are offered to trade
 	{
 		return this.trade;
+	}
+	
+	public Resource findCard(String a)
+	{
+		Resource desiredResource = null;
+		if (a.equals("Goat"))
+			desiredResource = (new Goat());
+		
+		else if (a.equals("Gold"))
+			desiredResource = (new Gold());
+		
+		else if (a.equals("Molasses"))
+			desiredResource = (new Molasses());
+		
+		else if (a.equals("Wood"))
+			desiredResource = (new Wood());
+		
+		else if (a.equals("Cutlass"))
+			desiredResource = (new Cutlass());
+		
+		return desiredResource;
 	}
 	
 	/*public Resource_Deck get_trade(Player p, Object o) //what resources are being sought

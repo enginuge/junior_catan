@@ -27,6 +27,11 @@ public class Hand
 		this.resource_deck.remove_all(o);
 	}
 	
+	public void remove_resource(Object o)
+	{
+		this.resource_deck.remove(o);
+	}
+	
 	public String resource_string()
 	{
 		this.resource_deck.sort();

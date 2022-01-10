@@ -628,11 +628,12 @@ public class Board
 		//Resource c = 
 		//Resource d = 
 		
-		//take out resource A, replace empty slot with resource B
+		//take out resource A, replace the empty slot with resource B
 		this.marketplace.add_card(b);
 		this.marketplace.remove_card(a);
-		//player updated
 		
+		
+		//Check whether all the cards on the market are of the same type, indicating marketplace must be refreshed
 		if(this.marketplace.refresh_deck())
 		{
 			//restock marketplace: assuming all cards are now of type b, remove the deck and replace with 5 fresh resource cards
