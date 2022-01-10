@@ -91,8 +91,6 @@ public class Lair implements Observer
 		if(this.occupied)
 		{
 			this.owner.collect_resource(o);
-			Resource_Deck stock = Model.getInstance().table.board.get_stockpile();
-			stock.remove(o);
 		}
 	}
 

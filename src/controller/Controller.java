@@ -172,7 +172,8 @@ public class Controller
 							else if(build_choice.equals("Ship"))
 								turn = new Build_Ship(current_player);
 								
-//							this.play_turn(turn);
+	//						turn.act();
+							this.play_turn(turn);
 							
 							break;
 							
@@ -202,25 +203,14 @@ public class Controller
 					// Do the next move.
 					
 					// Possibly followed by another move after trading
-//						turn.act();
+				
+					// Trade and then build or build and then trade.
+					// Or many times in no order.
+					// Either stop by knowing the player can do no more.
+					// Or ask them to end their turn.
 					
-				}
-				// Do the next move.
-				
-				// Possibly followed by another move after trading
-			
-				// Trade and then build or build and then trade.
-				// Or many times in no order.
-				// Either stop by knowing the player can do no more.
-				// Or ask them to end their turn.
-				
-				// Trade and then build or build and then trade.
-				// Or many times in no order.
-				// Either stop by knowing the player can do no more.
-				// Or ask them to end their turn.
-					
-				
-				// End of repeated action loop.
+					viewer.show_occupied(current_player);
+				} // End of repeated action loop.
 				
 				// Check Players Scores after each player finishes their turn.
 				for(Player p: this.model.table.players)
