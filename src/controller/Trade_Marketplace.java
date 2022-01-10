@@ -31,9 +31,10 @@ public class Trade_Marketplace extends Trade_Turn{
 	
 	
 	//string to resource conversion
-	public Resource set_DesiredResource(String a)
+	/*public Resource set_DesiredResource(String a)
 	{
 		Resource desiredResource = super.set_trade();
+		System.out.printf("%s\n",a);
 		
 		if (a == "Goat")
 			desiredResource = (new Goat());
@@ -42,7 +43,10 @@ public class Trade_Marketplace extends Trade_Turn{
 			desiredResource = (new Gold());
 		
 		else if (a == "Molasses")
-		desiredResource = (new Molasses());
+		{
+			System.out.printf("option molasses chosen\n");
+			desiredResource = (new Molasses());
+		}
 		
 		else if (a == "Wood")
 			desiredResource = (new Wood());
@@ -51,6 +55,13 @@ public class Trade_Marketplace extends Trade_Turn{
 			desiredResource = (new Cutlass());
 		
 		return desiredResource;
+	}*/
+	
+	public Resource set_DesiredResource(Resource a)
+	{
+		Resource desire = super.set_trade();
+		desire = a;
+		return desire;
 	}
 	
 	public Resource get_PlayerResource(Resource b)
@@ -82,13 +93,16 @@ public class Trade_Marketplace extends Trade_Turn{
 		{
 			Object playercard = this.get_PlayerResource(new Goat());
 			//playercard 
+			Object marketcard = this.get_PlayerResource(new Molasses());
 			
 			//show player the current marketplace inventory
 			this.get_market_inventory();
 			
 			//ask player to pick a marketplace card
-			String wantedCards = Viewer.getInstance().ask_for_marketcard(this.get_player(),this.get_market_inventory());
-			Object marketcard = this.set_DesiredResource(wantedCards);
+			String a = Viewer.getInstance().ask_for_marketcard(this.get_player(),this.get_market_inventory());
+			//Resource desiredResource
+			
+			//Object marketcard = this.set_DesiredResource(wantedCards);
 			
 			
 			

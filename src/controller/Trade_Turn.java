@@ -21,7 +21,7 @@ public abstract class  Trade_Turn extends Turn
 	public Resource set_trade() //what resources are being requested
 	{
 		//Resource trade = new Resource;
-		return trade;
+		return this.trade;
 	}
 	
 	public Resource get_trade() //what resources are offered to trade
