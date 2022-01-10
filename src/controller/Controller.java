@@ -172,13 +172,23 @@ public class Controller
 							else if(build_choice.equals("Ship"))
 								turn = new Build_Ship(current_player);
 								
-	//						turn.act();
 //							this.play_turn(turn);
 							
 							break;
 							
 						case "Trade":
 							trade_choice = viewer.ask_to_trade(current_player);
+							
+							if(trade_choice.equals("Stockpile")) {
+								System.out.println("Stockpile chosen for trade.");
+								turn = new Trade_Stockpile(current_player);
+							}
+							else if(trade_choice.equals("Marketplace")) {
+								System.out.println("Marketplace chosen for trade.");
+								turn = new Trade_Marketplace(current_player);
+							}
+								
+							this.play_turn(turn);
 							
 							break;
 							
@@ -192,11 +202,22 @@ public class Controller
 					// Do the next move.
 					
 					// Possibly followed by another move after trading
+//						turn.act();
+					
+				}
+				// Do the next move.
 				
-					// Trade and then build or build and then trade.
-					// Or many times in no order.
-					// Either stop by knowing the player can do no more.
-					// Or ask them to end their turn.
+				// Possibly followed by another move after trading
+			
+				// Trade and then build or build and then trade.
+				// Or many times in no order.
+				// Either stop by knowing the player can do no more.
+				// Or ask them to end their turn.
+				
+				// Trade and then build or build and then trade.
+				// Or many times in no order.
+				// Either stop by knowing the player can do no more.
+				// Or ask them to end their turn.
 					
 				
 				// End of repeated action loop.
