@@ -77,29 +77,6 @@ public class Marketplace extends Tradable_Deck{
 		countWood = this.marketplace.toString().split(w, -1).length-1;
 		
 		
-		/*
-		//count how many resources of each type are left in the stock
-		for (int i = 0; i<total; i++)
-		{
-			String currentResource = this.marketplace.toString();
-			if (currentResource == "Gold")
-				countGold++;
-			
-			else if(currentResource == "Goat")
-				countGoat++;
-			
-			else if (currentResource == "Molasses")
-				countMolasses++;
-			
-			else if (currentResource == "Wood")
-				countWood++;
-			
-			else if (currentResource == "Cutlass")
-				countCutlass++;
-		}*/
-		
-		
-		
 		if (countGold >= maxCardCount || countCutlass >= maxCardCount || countWood >= maxCardCount || countMolasses >= maxCardCount || countGoat >= maxCardCount)
 		{	
 			return true;
@@ -112,7 +89,7 @@ public class Marketplace extends Tradable_Deck{
 	//method to remove all of object o (to place back in marketplace) and refill marketplace from 5 fresh cards
 	public void restock(Object o) 
 	{
-		//TODO: Made sure restock does not occur more than once
+		
 		/*for (int i = 0; i<maxCardCount; i++)
 		{
 			this.marketplace.remove(o);

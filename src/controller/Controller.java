@@ -174,6 +174,7 @@ public class Controller
 						
 						if(trade_choice.equals("Stockpile")) {
 							System.out.println("Stockpile chosen for trade.");
+							turn = new Trade_Stockpile(current_player);
 						}
 						else if(trade_choice.equals("Marketplace")) {
 							System.out.println("Marketplace chosen for trade.");

@@ -17,18 +17,10 @@ public class Ask_For_PlayerCard extends Get_Input{
 		
 		List test = availableCards.list_resources();
 		
-		//for(Resource_Deck r:availableCards)
 		for(int i=0; i<availableCards.size(); i++)
 		{
 			super.add_option(String.format("%s", test.get(i)));
 		}
-		
-		
-		//*********************************/////
-		//Check validity of types Resource_Deck and List<Resource> 
-		//*********************************////
-		
-		//super.add_option(String.format("%d", availableCards.list_resources()));
 		this.set_prompt(this.player_name()+" which card would you like to give up to trade?\n");
 	}
 

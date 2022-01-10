@@ -25,15 +25,15 @@ public class Board
 
 	private int player_count = 0;
 	
-	private int maxResourceCount = 5; //how many cards of each resource exist in the Stockpile at the start of the game
+	private int maxResourceCount = 18; //how many cards of each resource exist in the Stockpile at the start of the game
 	
 	private int totalMarketCount = 5; //how many cards are listed in the marketplace
 			
 	public Coco_Deck coco_deck; // Deck to hold the coco_tiles.
 	
-	public Stockpile stockpile;
-	
 	public Marketplace marketplace;
+	
+	public Stockpile stockpile;
 	
 	public ArrayList<Island> islands = new ArrayList<Island>(); 
 	
@@ -73,6 +73,8 @@ public class Board
 		this.stockpile = this.setup_stock_cards();
 		
 		this.marketplace = this.setup_market();
+		
+		this.stockpile = this.setup_stock_cards();
 	}
 	
 	private Coco_Deck setup_coco_tiles()
@@ -122,7 +124,7 @@ public class Board
 	
 	private Stockpile setup_stock_cards()
 	{
-		System.out.println("Setting up Board's Stockpile...");
+		System.out.println("Setting up cards in Board's Stockpile...");
 		
 		Stockpile stock = new Stockpile();
 		
@@ -133,7 +135,7 @@ public class Board
 			stock.add_card(new Molasses());
 			stock.add_card(new Cutlass());
 			stock.add_card(new Gold());
-			System.out.println("One round of Stockpile cards Added.");
+			//System.out.println("One round of Stockpile cards Added.");
 		}
 		//System.out.println("Stockpile is: %s \n");
 		return stock;
@@ -614,19 +616,20 @@ public class Board
 	public Resource_Deck get_marketplace()
 	{
 		//see what cards are currently in the market
-		//list through market instance
 		return this.marketplace.get_marketplace();
-		//return this.marketplace.resource_string();
-		//
 
+	}
+	
+	public Resource_Deck get_stockpile()
+	{
+		//see what cards are currently in the stockpile
+		return this.stockpile.get_stockpile();
 	}
 	
 	public void trade_to_marketplace(Object a, Object b)
 	{
 		//take cards in/out of marketplace.
 		//also refresh and restock as needed
-		//Resource c = 
-		//Resource d = 
 		
 		//take out resource A, replace the empty slot with resource B
 		this.marketplace.add_card(b);
@@ -638,8 +641,25 @@ public class Board
 		{
 			//restock marketplace: assuming all cards are now of type b, remove the deck and replace with 5 fresh resource cards
 			this.marketplace.restock(b);
-			//TODO: Add all five of that resource back to stockpile
+			//Add all five of that resource back to stockpile
+			this.stockpile.add_card(b);
+			this.stockpile.add_card(b);
+			this.stockpile.add_card(b);
+			this.stockpile.add_card(b);
+			this.stockpile.add_card(b);
 		}
+	}
+	
+	//implement 2:1 trading of b:a
+	public void trade_to_stockpile(Object a, Object b)
+	{
+		//take cards in/out of stock.
+		//also refresh and restock as needed
+		
+		//take out resource A (card from stockpile), replace the empty slot with two of resource B
+		this.stockpile.add_card(b);
+		this.stockpile.add_card(b);
+		this.stockpile.remove_card(a);
 	}
 	
 	

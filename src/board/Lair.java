@@ -4,7 +4,9 @@ import java.util.ArrayList;
 
 import Player.Player;
 import cards.Resource;
+import model.Model;
 import observable.Observer;
+import decks.Resource_Deck;
 
 /*
  * Class to describe each lair/node on the board.
@@ -87,7 +89,11 @@ public class Lair implements Observer
 	public void update(Object o)
 	{
 		if(this.occupied)
+		{
 			this.owner.collect_resource(o);
+			Resource_Deck stock = Model.getInstance().table.board.get_stockpile();
+			stock.remove(o);
+		}
 	}
 
 	@Override

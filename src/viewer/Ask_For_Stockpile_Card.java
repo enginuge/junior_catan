@@ -9,9 +9,9 @@ import trading_resources.Marketplace;
 import decks.Resource_Deck;
 import cards.Resource;
 
-public class Ask_For_MarketCard extends Get_Input{
+public class Ask_For_Stockpile_Card extends Get_Input{
 
-	public Ask_For_MarketCard(Player p, Resource_Deck availableCards)
+	public Ask_For_Stockpile_Card(Player p, Resource_Deck availableCards)
 	{
 		super(p);
 		

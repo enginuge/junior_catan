@@ -15,41 +15,15 @@ import decks.Resource_Deck;
 
 
 public class Stockpile extends Tradable_Deck{
-
-	/* TODO: Stockpile could be comprised of five stacks*/
-	//public Stack<Gold> gold_card;
-	//public Stack<Molasses> molasses_card;
-	//public Stack<Wood> wood_card;
-	//public Stack<Cutlass> cutlass_card;
-	//public Stack<Goat> goat_card;
 	
-	/*public static Stockpile uniqueInstance = null; // A deck for the board's stockpile
-	
-	public static Stockpile getInstance()
-	{
-		if(uniqueInstance == null)
-			uniqueInstance = new Stockpile();
-		
-		return uniqueInstance;
-	}*/
-	
-	private int maxResourceCount = 5;
+	private int maxCardCount = 18;
 	
 	private Resource_Deck stockpile;
 	
-	/* Constructor. */
+	/* Constructor. Fills up the Marketplace with its starting cards*/
 	public Stockpile()
 	{
 		this.stockpile = new Resource_Deck();
-		/*for (int i = 0; i<maxResourceCount; i++)
-		{
-			stockpile.add(new Wood());
-			stockpile.add(new Goat());
-			stockpile.add(new Molasses());
-			stockpile.add(new Cutlass());
-			stockpile.add(new Gold());
-			System.out.println("One round of Stock cards added");
-		}*/ //Moved to setup in Board
 	}
 	
 	
@@ -57,74 +31,45 @@ public class Stockpile extends Tradable_Deck{
 	@Override
 	public void add_card(Object o) //for trading
 	{
+		//Resource r = (Resource)o;
 		this.stockpile.add(o);
-		//debugging
-		System.out.printf("%s added back to Stockpile.\n", o);
-		
+		System.out.printf("%s added to Stockpile.\n", o);
 	}
 	
-	/* Remove a resource card from the stock pile */
+	/* Remove a resource card from the marketplace */
 	@Override
 	public void remove_card(Object o)
 	{
-		this.stockpile.remove(o);
-		//debugging
-		System.out.printf("%s removed from Stockpile.\n", o);
+		//Resource r = (Resource)o;
+		if(this.stockpile.remove(o))
+			System.out.printf("%s removed from Stockpile.\n", o);
 	}
 	
-	public boolean refresh_deck()
-	{
-		//cycle through all items in stockpile, adding their count
-		int total = this.stockpile.size();
-		int countGold = 0;
-		int countCutlass = 0;
-		int countWood = 0;
-		int countMolasses = 0;
-		int countGoat = 0;
-		
-		
-		//count how many resources of each type are left in the stock
-		for (int i = 0; i<total; i++)
-		{
-			String currentResource = this.stockpile.toString();
-			if (currentResource == "gold")
-				countGold++;
-			
-			else if(currentResource == "goat")
-				countGoat++;
-			
-			else if (currentResource == "molasses")
-				countMolasses++;
-			
-			else if (currentResource == "wood")
-				countWood++;
-			
-			else if (currentResource == "cutlass")
-				countCutlass++;
-		}
-		
-		if (countGold == 0 || countCutlass == 0 || countWood == 0 || countMolasses == 0 || countGoat == 0)
-			return true;
-		
-		else
-			return false;
-	}
-
+	//cycle through the deck to check whether it must be updated or not
 	
-	public void restock(Object o) // add a max count of whatever was missing
+	public Resource_Deck get_stockpile()
 	{
-		//TODO: Made sure restock does not occur more than once
-		for (int i = 0; i<maxResourceCount; i++)
-		{
-			this.stockpile.add(o);
-		}
-		System.out.printf("All resources of type %s have been restocked back on the board.\n", o);
+		return this.stockpile;
 	}
 
 	
 	public String resource_string()
 	{
 		return this.stockpile.toString();
+	}
+
+
+	@Override
+	public boolean refresh_deck() {
+		// TODO Auto-generated method stub
+		return true;
+	}
+
+
+	@Override
+	public void restock(Object o) {
+		// TODO Auto-generated method stub
+		
 	}
 
 
