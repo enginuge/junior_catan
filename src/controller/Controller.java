@@ -112,6 +112,7 @@ public class Controller
 		String a;
 		String action; // the move the player wants to make. 
 		String build_choice;
+		String trade_choice;
 		
 		boolean turn_ended = false;
 		
@@ -172,11 +173,12 @@ public class Controller
 								turn = new Build_Ship(current_player);
 								
 	//						turn.act();
-							this.play_turn(turn);
+//							this.play_turn(turn);
 							
 							break;
 							
 						case "Trade":
+							trade_choice = viewer.ask_to_trade(current_player);
 							
 							break;
 							
@@ -196,8 +198,8 @@ public class Controller
 					// Either stop by knowing the player can do no more.
 					// Or ask them to end their turn.
 					
-					viewer.show_occupied(current_player);
-				} // End of repeated action loop.
+				
+				// End of repeated action loop.
 				
 				// Check Players Scores after each player finishes their turn.
 				for(Player p: this.model.table.players)

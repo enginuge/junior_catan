@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import Player.Player;
 import board.Channel;
 import board.Lair;
+import decks.Resource_Deck;
 import model.Model;
 
 /*
@@ -52,6 +53,50 @@ public class Viewer
 		Ask_Building ab = new Ask_Building(p);
 		
 		return ab.get_input();
+	}
+	
+	//trading methods:
+	public String ask_to_trade(Player p)
+	{
+		Ask_To_Trade att = new Ask_To_Trade(p);
+		
+		return att.get_input();
+	}
+	
+	//marketplace methods:
+	public String show_Marketplace()
+	{
+		Resource_Deck marketdeck = Model.getInstance().table.board.get_marketplace();
+		String mstring = marketdeck.toString();
+		return mstring;
+	}
+	
+	public String ask_for_marketcard(Player p, Resource_Deck availableCards)
+	{
+		Ask_For_MarketCard card = new Ask_For_MarketCard(p, availableCards);
+		
+		return card.get_input();
+	}
+	
+	//stockpile methods:
+	public String check_valid_hand(Player p, Resource_Deck playerhand)
+	{
+		Check_Valid_Hand hand = new Check_Valid_Hand(p, playerhand);
+		return hand.get_input();
+	}
+	
+	public String ask_for_stockpile_card(Player p, Resource_Deck availableCards)
+	{
+		Ask_For_Stockpile_Card card = new Ask_For_Stockpile_Card(p, availableCards);
+		
+		return card.get_input();
+	}
+	
+	public String ask_for_playercard(Player p, Resource_Deck availableCards)
+	{
+		Ask_For_PlayerCard card = new Ask_For_PlayerCard(p, availableCards);
+		
+		return card.get_input();
 	}
 	
 	public String display_roll()

@@ -36,7 +36,7 @@ public class Resource_Deck implements Deck
 		
 		for(int i=0; i < resources.size(); i++)
 		{
-			if(r == resources.get(i))
+			if(r.equals(resources.get(i)))
 			{
 				resources.remove(i);
 				
@@ -45,6 +45,32 @@ public class Resource_Deck implements Deck
 		}
 		
 		return false; // Did not remove.
+	}
+	
+	public int size()
+	{
+		int s = resources.size();
+		return s;
+	}
+	
+	public void remove_all(Object o)
+	{
+		///get size of resource deck
+		int totalcards = resources.size();
+		
+		//o is the resource we are removing from the hand
+		Resource to_remove = (Resource)o;
+		
+		//cycle through entire list
+		// if object i == object o, remove.
+		
+		for(int i=0; i < totalcards; i++)
+		{
+			if(resources.get(i) == to_remove)
+			{
+				resources.remove(i);
+			}
+		}
 	}
 	
 	public List<Resource> list_resources()
@@ -193,6 +219,7 @@ public class Resource_Deck implements Deck
 		return this;
 	}
 	
+	@Override
 	public String toString()
 	{
 		String s = "Resource Deck:\n";
@@ -206,6 +233,7 @@ public class Resource_Deck implements Deck
 		
 		return s;
 	}
+
 	
 	public static void main(String[] args)
 	{
