@@ -4,7 +4,9 @@ import java.util.ArrayList;
 
 import Player.Player;
 import cards.Resource;
+import model.Model;
 import observable.Observer;
+import decks.Resource_Deck;
 
 /*
  * Class to describe each lair/node on the board.
@@ -83,11 +85,13 @@ public class Lair implements Observer
 	/*
 	 * When the lair is updated, each owner must receive the resource of the island that won.
 	 */
-//	@Override // Not an Override as it has an input, which makes it a different fnuction.
+//	@Override // Not an Override as it has an input, which makes it a different function.
 	public void update(Object o)
 	{
 		if(this.occupied)
+		{
 			this.owner.collect_resource(o);
+		}
 	}
 
 	@Override

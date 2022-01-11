@@ -36,6 +36,13 @@ public class Player
 		this.hand.add_resource(o);
 	}
 	
+	public void remove_resource(Object o)
+	{
+		System.out.printf("%s has removed %s from their hand.\n", this.name, o);
+		
+		this.hand.remove_resource(o);
+	}
+	
 	public String get_name()
 	{
 		return this.name;

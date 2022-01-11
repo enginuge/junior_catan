@@ -32,6 +32,47 @@ public abstract class Resource
 	/* Create the to string method */
 	public abstract String toString();
 	
+	public Object stringToResour(String a)
+	{
+		int countGold = 0;
+		int countCutlass = 0;
+		int countWood = 0;
+		int countMolasses = 0;
+		int countGoat = 0;
+		String gd = "Gold";
+		String gt = "Goat";
+		String m = "Molasses";
+		String c = "Cutlass";
+		String w = "Wood";
+		
+		countGold = a.split(gd, -1).length-1;
+		countGoat = a.split(gt, -1).length-1;
+		countCutlass = a.split(c, -1).length-1;
+		countMolasses = a.split(m, -1).length-1;
+		countWood = a.split(w, -1).length-1;
+		
+		Object desiredResource = 0;
+		if (countGoat > 0)
+			desiredResource = (new Goat());
+		
+		else if (countGold > 0)
+			desiredResource = (new Gold());
+		
+		else if (countMolasses > 0)
+		{
+			System.out.printf("option molasses chosen\n");
+			desiredResource = (new Molasses());
+		}
+		
+		else if (countWood > 0)
+			desiredResource = (new Wood());
+		
+		else if (countCutlass > 0)
+			desiredResource = (new Cutlass());
+		
+		return desiredResource;
+	}
+	
 	public int compare(Resource res2)
 	{
 		return (this.type.toString()).compareTo(res2.toString());

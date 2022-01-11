@@ -112,6 +112,7 @@ public class Controller
 		String a;
 		String action; // the move the player wants to make. 
 		String build_choice;
+		String trade_choice;
 		
 		boolean turn_ended = false;
 		
@@ -177,6 +178,18 @@ public class Controller
 							break;
 							
 						case "Trade":
+							trade_choice = viewer.ask_to_trade(current_player);
+							
+							if(trade_choice.equals("Stockpile")) {
+								System.out.println("Stockpile chosen for trade.");
+								turn = new Trade_Stockpile(current_player);
+							}
+							else if(trade_choice.equals("Marketplace")) {
+								System.out.println("Marketplace chosen for trade.");
+								turn = new Trade_Marketplace(current_player);
+							}
+								
+							this.play_turn(turn);
 							
 							break;
 							
